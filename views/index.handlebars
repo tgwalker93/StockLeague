@@ -1,0 +1,86 @@
+
+<div id="burgerImageRow" class="row"> 
+<div class="col-md-4"></div>  
+<div class="col-md-4">   
+<h1 id="mainHeader">Burgers!</h1>
+<img src="../assets/img/burger.png" alt="burger" style="width:304px;height:228px;">
+</div>
+<div class="col-md-4"></div>
+</div>    
+
+<div id="burgersRow" row>
+    <div class="col-md-6">  
+<div id="notDevouredBlock"> 
+<h2 id="notDevouredTitle">Burgers that are NOT devoured!</h2>
+
+<ol>
+  {{#each burgers}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.burger_name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button type="submit">Devour it!</button>
+        </form>
+      </li>
+    {{/unless}}
+  {{/each}}
+</ol>
+
+</div>
+
+</div>
+
+
+<div class="col-md-6">
+<div id="devouredBlock">
+<h2 id="devouredTitle">Burgers that are devoured!</h2>
+
+<ol>
+  {{#each burgers}}
+    {{#if this.devoured}}
+      <li>
+        {{this.burger_name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="false">
+          <button type="submit">BRING BACK TO LIFE!</button>
+        </form>
+      </li>
+    {{/if}}
+  {{/each}}
+</ol>
+</div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="row">
+<div class="col-md-12">
+<div id="eatDaBurgerWrapper"> 
+
+<h2 id="eatDaBurgerHeader">Eat da Burger</h2>
+<form class="create-update-form" action="/" method="POST">
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div id="devouredForm" class="form-group">
+    <label for="slee">Devoured?</label><br>
+    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="devoured" value="0"> Not Devoured
+  </div>
+
+  <button id="addBurger" type="submit">Add Burger</button>
+</form>
+</div>
+</div>
+
+</div>

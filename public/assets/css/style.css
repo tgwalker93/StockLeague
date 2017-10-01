@@ -1,0 +1,53 @@
+body {
+    background-color: #e5ffdd !important
+}
+li {
+    padding: 5px;
+    margin: 5px;
+
+
+  }
+
+  #mainHeader {
+    margin-left: 17%;
+  }
+
+#burgerImageRow {
+    margin-left: 3%;
+}
+
+  .label {
+    font-weight: bold;
+  }
+  
+  .create-update-form {
+    padding: 5px;
+    margin: 5px;
+    background: #B6B6B6;
+    display: block;
+    margin: auto;
+    width: 40%;
+    margin-left: 25%;
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+    margin-left: 24%;
+    
+  }
+
+  #addBurger {
+    margin-left: 40%;
+  }
+#devouredForm {
+    margin-left: 40%;
+}
+
+#eatDaBurgerHeader {
+    margin-left: 40%;
+}
+
+#burgersRow {
+    margin-left: 14%;
+}
+
