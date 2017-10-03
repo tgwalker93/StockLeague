@@ -34,8 +34,11 @@ $(document).ready(function() {
             username: $("#username").val().trim(),
             password: $("#password").val().trim(),
             stock1: allStocks[0].ticker,
+            stock1value: allStocks[0].price,
             stock2: allStocks[1].ticker,
+            stock2value: allStocks[1].price,
             stock3: allStocks[2].ticker,
+            stock3value: allStocks[2].price,
             teamName: ""
 
         };
@@ -76,6 +79,13 @@ $(document).ready(function() {
             });
           }
 
+        function createProfile() {
+
+              $.post("/api/createTeam", userProfile, function() {
+                  window.location.href = "/profile";
+
+              });
+            }
 
 
       function createNewRow(stock) {
