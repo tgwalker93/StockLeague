@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL) {
         host:'localhost',
         user:'root',
         password:'Mario626',
-        database:'burgers_db'
+        database:'stocks_db'
     })
 }
 
