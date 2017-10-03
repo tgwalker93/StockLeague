@@ -22,7 +22,7 @@ $(document).ready(function() {
         stock = {
           name: $("#name").val().trim(),
 
-        }; 
+        };
         getStock();
       });
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
             stock3: allStocks[2].ticker,
             teamName: ""
 
-        }; 
+        };
         console.log("USER PROFILE")
         console.log(userProfile);
         createProfile();
@@ -51,10 +51,10 @@ $(document).ready(function() {
 
 
       function getStock() {
-    
+
         $.get("/api/new/" + stock.name, function(data) {
-          
-          
+
+
           stock = {
               ticker: data.ticker,
               price: data.price
@@ -67,15 +67,15 @@ $(document).ready(function() {
         });
       }
 
-      
+
       function createProfile() {
-        
+
             $.post("/api/createProfile", userProfile, function() {
                 window.location.href = "/profile";
-              
+
             });
           }
-      
+
 
 
       function createNewRow(stock) {
@@ -97,7 +97,7 @@ $(document).ready(function() {
         //title
         var newPostTitle = $("<h2>");
         newPostTitle.text("Stock Ticker: " + stock.ticker + "             ||              Last Closing Stock Price: " + stock.price);
-        
+
         newPostPanelHeading.append(deleteBtn);
         newPostPanelHeading.append(newPostTitle);
         newPostPanel.append(newPostPanelHeading);
@@ -118,7 +118,7 @@ $(document).ready(function() {
                 break;
             }
         }
-        //DELETES THE DIV THAT CONTAINS STOCK 
+        //DELETES THE DIV THAT CONTAINS STOCK
         $(this).parent().parent().remove()
       }
 
