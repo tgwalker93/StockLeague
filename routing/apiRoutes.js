@@ -44,6 +44,25 @@ var stocksArray = []
 	  });
 
 
+	    
+
+	  // POST route for saving a new post
+	  app.post("/api/createProfile", function(req, res) {
+		console.log(req.body);
+		db.User.create({
+		  username: req.body.username,
+		  password: req.body.password,
+		  stock1: req.body.stock1,
+		  stock2: req.body.stock2,
+		  stock3: req.body.stock3,
+		  teamName: ""
+		})
+		.then(function(dbPost) {
+		  res.json(dbPost);
+		});
+	  });
+
+
 
 
 
