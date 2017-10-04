@@ -15,22 +15,26 @@ module.exports = function(app) {
   // In each of the below cases the user is shown an HTML page of content
   // ---------------------------------------------------------------------------
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+    res.sendFile(path.join(__dirname, "../../public/home.html"));
   });
   app.get("/search", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/search.html"));
+    res.sendFile(path.join(__dirname, "../../public/search.html"));
   });
 
   app.get("/profile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/profile.html"));
+    res.sendFile(path.join(__dirname, "../../public/profile.html"));
   });
 
   app.get("/stockDetails", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/stockDetails.html"));
+    res.sendFile(path.join(__dirname, "../../public/stockDetails.html"));
+  });
+
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../../public/login.html"));
   });
 
   // If no matching route is found default to home
   app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+    res.sendFile(path.join(__dirname, "../../public/home.html"));
   });
 };

@@ -1,9 +1,11 @@
 
-var path 			= require('path');
-var db = require("../models");
+var path = require('path');
+var db = require("../../models");
 
 var request = require("request");
-
+var express = require("express");
+var passport = require("passport");
+var router = express.Router();
 
 module.exports = function(app){
 
@@ -90,11 +92,34 @@ var Robinhood = require('robinhood')(credentials, function(){
 	  });
 
 
+
+	  router
+	  .get('/login', (req, res, next) => {
+		res.render('login');
+	  })
+	  .post('/login', passport.authenticate('local', {
+		successRedirect: '/',
+		failureRedirect: '/account/login'
+	  }))
+	  .get('/logout', (req, res, next) => {
+		req.session.destroy(err => {
+		  res.redirect('/account/login')
+		})
+	  })
+	  .get('/signup', (req, res, next) => {
+		res.render('signup');
+	  })
+	  .post('/signup', passport.authenticate('local-register', {
+		successRedirect: '/',
+		failureRedirect: '/account/signup'
+	  }))
 	    
 
 	  // POST route for saving a new post
 	  app.post("/api/createProfile", function(req, res) {
 		console.log(req.body);
+
+
 		db.User.create({
 		  username: req.body.username,
 		  password: req.body.password,

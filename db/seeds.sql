@@ -1,4 +1,4 @@
--- SELECT * FROM burgers
+SELECT * FROM Users;
 
 
 -- INSERT INTO burgers (burger_name, devoured)

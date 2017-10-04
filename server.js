@@ -17,8 +17,8 @@ app.use(methodOverride("_method"));
 
 
 
-require("./routing/apiRoutes")(app);
-require("./routing/htmlRoutes")(app);
+require("./server/routing/apiRoutes")(app);
+require("./server/routing/htmlRoutes")(app);
 
 
 db.sequelize.sync().then(function() {
