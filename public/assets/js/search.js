@@ -69,7 +69,6 @@ $(document).ready(function() {
 
 
       function createProfile() {
-
             $.post("/api/createProfile", userProfile, function() {
                 window.location.href = "/profile";
 

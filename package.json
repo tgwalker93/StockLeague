@@ -27,6 +27,7 @@
     "method-override": "^2.3.9",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.2",
+    "robinhood": "^1.1.1",
     "sequelize": "^4.11.1",
     "xmlhttprequest": "^1.8.0"
   }

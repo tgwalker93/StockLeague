@@ -8,14 +8,60 @@ var request = require("request");
 module.exports = function(app){
 
 
-//API POST Request-handles when user submits a form & thus submits data to the server.
-// In each of the below cases, when a user submits form data (a JSON object)
-// ...the JSON is pushed to the appropriate Javascript array
-var stocksArray = []
 
 
-	var newStock;
+
+
+//TEST API ROUTE USING ROBINHOOD API
+app.get("/api/test", function(req, res) {
+// ROBINHOOD -------------
+
+//INITIAL ROBINHOOD CREDENTIALS
+var credentials = {
+    username: 'tgwalker@uci.edu',
+    password: 'forthewilling626'
+};
+
+var robinhoodAuthToken;
+
+//prestigeworldwide is password for other account specifically for this project, currently pending approval
+
+var Robinhood = require('robinhood')(credentials, function(){
+	robinhoodAuthToken = Robinhood.auth_token();
+        //      <authenticated alphanumeric token>
+});
+
+
+ // CHANGE CREDENTIALS TO TEMP auth token
+ credentials = {
+    token: robinhoodAuthToken
+};
+var Robinhood = require('robinhood')(credentials, function(){
+ 
+    //Robinhood is connected and you may begin sending commands to the api.
+ 
+    Robinhood.fundamentals('CRUS', function(error, response, body) {
+        if (error) {
+            console.error(error);
+            process.exit(1);
+        }
+		console.log(body);
+		res.json(body);
+    });
+ 
+});
+
+});
+
+
+
+
+
+
+	//API call to get time series using apla advantage API
 	app.get("/api/new/:name", function(req, res) {
+		var stocksArray = []
+		var newStock;
 		var query = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + req.params.name + "&apikey=PF2NNSQ4ASZPFCSK"
 
 		request(query, function(error, response, body) {
