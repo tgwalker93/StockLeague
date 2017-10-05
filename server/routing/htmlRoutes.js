@@ -4,37 +4,44 @@
 // ===============================================================================
 var path = require("path");
 
+var db = require("../../models");
+
+var request = require("request");
+var express = require("express");
+var passport = require("passport");
+var router = express.Router();
 
 // ===============================================================================
 // ROUTING
 // ===============================================================================
 
-module.exports = function(app) {
   // HTML GET Requests
   // Below code handles when users "visit" a page.
   // In each of the below cases the user is shown an HTML page of content
   // ---------------------------------------------------------------------------
-  app.get("/", function(req, res) {
+  router.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/home.html"));
   });
-  app.get("/search", function(req, res) {
+  router.get("/search", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/search.html"));
   });
 
-  app.get("/profile", function(req, res) {
+  router.get("/profile", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/profile.html"));
   });
 
-  app.get("/stockDetails", function(req, res) {
+  router.get("/stockDetails", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/stockDetails.html"));
   });
 
-  app.get("/login", function(req, res) {
+  router.get("/login", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/login.html"));
   });
 
   // If no matching route is found default to home
-  app.get("*", function(req, res) {
+  router.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/home.html"));
   });
-};
+
+
+  module.exports = router;

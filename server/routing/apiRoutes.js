@@ -7,7 +7,7 @@ var express = require("express");
 var passport = require("passport");
 var router = express.Router();
 
-module.exports = function(app){
+
 
 
 
@@ -15,7 +15,7 @@ module.exports = function(app){
 
 
 //TEST API ROUTE USING ROBINHOOD API
-app.get("/api/test", function(req, res) {
+router.get("/api/test", function(req, res) {
 // ROBINHOOD -------------
 
 //INITIAL ROBINHOOD CREDENTIALS
@@ -61,7 +61,7 @@ var Robinhood = require('robinhood')(credentials, function(){
 
 
 	//API call to get time series using apla advantage API
-	app.get("/api/new/:name", function(req, res) {
+	router.get("/api/new/:name", function(req, res) {
 		var stocksArray = []
 		var newStock;
 		var query = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + req.params.name + "&apikey=PF2NNSQ4ASZPFCSK"
@@ -93,30 +93,31 @@ var Robinhood = require('robinhood')(credentials, function(){
 
 
 
-	  router
-	  .get('/login', (req, res, next) => {
-		res.render('login');
-	  })
-	  .post('/login', passport.authenticate('local', {
-		successRedirect: '/',
-		failureRedirect: '/account/login'
-	  }))
-	  .get('/logout', (req, res, next) => {
-		req.session.destroy(err => {
-		  res.redirect('/account/login')
-		})
-	  })
-	  .get('/signup', (req, res, next) => {
-		res.render('signup');
-	  })
-	  .post('/signup', passport.authenticate('local-register', {
-		successRedirect: '/',
-		failureRedirect: '/account/signup'
-	  }))
+	  // router.get('/login', (req, res, next) => {
+		// res.render('login');
+	  // })
+	  // router.post('/login', passport.authenticate('local', {
+		// successRedirect: '/',
+		// failureRedirect: '/account/login'
+	  // }))
+	  // router.get('/logout', (req, res, next) => {
+		// req.session.destroy(err => {
+		//   res.redirect('/account/login')
+		// })
+	  // })
+	  // router.get('/signup', (req, res, next) => {
+		// res.render('signup');
+	  // })
+	  // router.post('/signup', passport.authenticate('local-register', {
+		// successRedirect: '/',
+		// failureRedirect: '/account/signup'
+	  // }))
 	    
 
+
+
 	  // POST route for saving a new post
-	  app.post("/api/createProfile", function(req, res) {
+	  router.post("/api/createProfile", function(req, res) {
 		console.log(req.body);
 
 
@@ -137,4 +138,4 @@ var Robinhood = require('robinhood')(credentials, function(){
 
 
 
-};
+		module.exports = router;
