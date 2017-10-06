@@ -1,3 +1,7 @@
+//THIS FILE IS NOT BEING USED, THIS WAS SUPPOSED TO BE SERVER SIDE CODE
+
+
+
 var request = require("request");
 var express = require("express");
 

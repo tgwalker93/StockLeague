@@ -33,10 +33,10 @@ $(document).ready(function() {
         userProfile = {
             username: $("#username").val().trim(),
             password: $("#password").val().trim(),
-            stock1: allStocks[0].ticker,
-            stock2: allStocks[1].ticker,
-            stock3: allStocks[2].ticker,
-            teamName: ""
+            // stock1: allStocks[0].ticker,
+            // stock2: allStocks[1].ticker,
+            // stock3: allStocks[2].ticker,
+            // teamName: ""
 
         };
         console.log("USER PROFILE")
@@ -69,8 +69,13 @@ $(document).ready(function() {
 
 
       function createProfile() {
-            $.post("/api/createProfile", userProfile, function() {
-                window.location.href = "/profile";
+            // $.post("/api/createProfile", userProfile, function() {
+            //     window.location.href = "/profile";
+
+            // });
+
+              $.post("/register", userProfile, function() {
+                // window.location.href = "/profile";
 
             });
           }

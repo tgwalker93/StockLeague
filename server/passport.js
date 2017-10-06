@@ -5,6 +5,10 @@ var LocalStrategy = require('passport-local').Strategy
 var bcrypt = require('bcrypt-nodejs');
 var db = require('../models');
 
+var saveUser = {
+
+}
+
 // import db from '../models'; 
 module.exports = function(passport) {
 const authenticate = (username, password, done) => {
@@ -40,8 +44,8 @@ const register = (req, username, password, done) => {
   }).then(function(user) {
     console.log("I'M HERE!!!!!")
     if (user) {
-      return done(null, false, { message: 'an account with that username has already been created' });
       console.log("I'M FIRST IF!!!!!")
+      return done(null, false, { message: 'an account with that username has already been created' });
     }
     if (password !== req.body.password) {
       console.log("I'M SECOND IF!!!!!")
@@ -51,39 +55,46 @@ const register = (req, username, password, done) => {
       username,
       password: bcrypt.hashSync(password)
     }
-    db.User.create(newUser)
-    .then(function(ids) {
-      newUser.id = ids[0]
-
-
-
-
-
+    db.User.create(newUser).then(function(ids) {
+      // newUser.id = ids[0]
+      newUser.id = ids.dataValues.id;
 
       // ------ 
 
-      db.User.update({
+      // db.User.update({
 
-        stock1: "a",
-        stock2: "b",
-        stock3: "c",
-        teamName: ""
-      }, {
-        where: {
-          username: newUser.username
-        }
+      //   stock1: "a",
+      //   stock2: "b",
+      //   stock3: "c",
+      //   teamName: ""
+      // }, {
+      //   where: {
+      //     username: newUser.username
+      //   }
+      // }).then(function(user) {
 
-      }
-      ).then(function(user) {
-        done(null, user);
-      });
+      //   // //first done
+      //   // done(null, user);
+      //   // //second done
+      //   // done(null, newUser)
 
+      //   //third done
+      //   done(null, user);
+      //   // serialize();
+    
+      // })
+      // second done
+      // done(null, newUser)
 
-
+      updateStocks(newUser);
       done(null, newUser)
-    });
-    done(null, user);
-  }).catch(done) 
+      
+    })
+    // first done
+    // done(null, user);
+  })
+  
+  // .catch(done) 
 
   
   // db('users')
@@ -112,13 +123,42 @@ const register = (req, username, password, done) => {
 }
 
 
+
+
 passport.use(new LocalStrategy(authenticate));
 passport.use('local-register', new LocalStrategy({passReqToCallback: true}, register));
+
+
+function updateStocks(newUser) {
+  db.User.update({
+    
+            stock1: "a",
+            stock2: "b",
+            stock3: "c",
+            teamName: ""
+          }, {
+            where: {
+              username: newUser.username
+            }
+          }).then(function(user) {
+    
+            // //first done
+            // done(null, user);
+            // //second done
+            // done(null, newUser)
+    
+            //third done
+          //  done(null, user);
+            // serialize();
+        
+          })
+}
 
 // Choose what to send as a cookie to the client side
 passport.serializeUser((user, done) => {
   console.log("I'M SERIAL");
   done(null, user.id);
+  
 });
 
 // Get the entire user information from the database based on the user id
@@ -134,5 +174,7 @@ passport.deserializeUser((id, done) => {
   //   })
   //   .catch(done) // pass the error back
 });
+
 }
+
 // module.exports = passport;

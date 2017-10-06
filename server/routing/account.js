@@ -14,15 +14,16 @@ router.get('/login', (req, res, next) => {
   }))
   router.get('/logout', (req, res, next) => {
     req.session.destroy(err => {
-      res.redirect('/account/login')
+      res.redirect('/login')
     })
   })
+
   router.get('/register', (req, res, next) => {
     res.sendFile(path.join(__dirname, "../../public/home.html"));
   })
   router.post('/register', passport.authenticate('local-register', {
     successRedirect: '/',
-    failureRedirect: '/login'
+    failureRedirect: '/login',
   }))
     
 
