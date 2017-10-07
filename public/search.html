@@ -1,32 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>REGISTER</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- link to the Bootstrap Library -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!-- Font Awesome Glyphicons -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-    <!-- link to local style sheet-->
-    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
-
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-    <script src="assets/js/jquery.validate.min.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- link to the Bootstrap Library -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Font Awesome Glyphicons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <!-- link to local style sheet-->
+  <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+  <script src="assets/js/jquery.validate.min.js"></script>
   <!-- Chosen -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
- 
-
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script> -->
+  <title>Registration Page</title>
 </head>
-
 <body>
   <div class="row">
     <div class="col-sm-6 leftSide">
@@ -35,23 +26,18 @@
           <h3>Pick your top 3 stocks!</h3>
         </div>
       </div>
-
         <div class="row">
           <div class="col-sm-8 input">
             <input type="text" name="stockName" placeholder="&#xf002 Search your stock" id="stockName" class="form-control" required>
           </div>
-
           <div class="col-sm-1 hidden"></div>
-
           <div class="col-sm-3">
             <button type="submit" class="btn btn-md" id="search">
             <!-- <i class="fa fa-check-circle" aria-hidden="true"></i> -->
             Search Stock</button>
           </div>
         </div>
-
        <hr>
-
       <div class="row">
         <div class="col-sm-12">
           <h3>Here are the stocks: </h3>
@@ -61,117 +47,58 @@
           </button>
         </div>
       </div>
-
     </div>
-
     <div class="col-sm-1"></div>
-
-
     <div class="col-sm-5 rightSide">
       <!-- register pannel here -->
       <form class="login" action="" method="POST" name="registration">
-
         <fieldset>
-
           <legend class="legend text-center">
             <h3>REGISTER</h3>
           </legend>
-
-          
             <input type="email" placeholder="&#xf003 Email" id="email" name="email" required autocomplete='off' />
             <!-- <span><i class="fa fa-asterisk"></i></span> -->
-          
-
-          
             <input type="password" placeholder="&#xf023 Password" id="password" name="password" required />
             <!-- <span><i class="fa fa-asterisk"></i></span> -->
-          
-
-          
             <input type="password" placeholder="&#xf023 Confirm Password" id="confirmPassword" name="confirmPassword" required />
             <!-- <span><i class="fa fa-asterisk"></i></span> -->
-
-
             <p class="text-center" id="switchTo">Already a Member. <a href="login.html">Log In</a>
-          
-
             <button type="submit" value="Send" class="submitButton"><i class="fa fa-long-arrow-right"></i></button>
-
         </fieldset>
-
-        <!-- <div class="feedback">
-                    login successful <br /> redirecting...
-                </div> -->
-
+        <!-- <div class="feedback">login successful</br> redirecting...
+        </div> -->
       </form>
-
     </div>
   </div>
 <!-- <div class="container">
     <div>
       <h2>Pick your top 3 stocks!</h2>
-
       <h4>Stock Ticker</h4>
       <input type="text" name="" id="name" class="form-control" required>
-
       <br> -->
-
   <!-- Submit Button -->
   <!-- <button type="submit" class="btn btn-primary btn-lg btn-block" id="search"><i class="fa fa-check-circle" aria-hidden="true"></i>
     Search</button>
-
       <br>
-
-
       <div id="stocksView">
-
-
       </div>
-
-
       <hr>
       <p> Username</p>
       <input type="text" name="" id="username" class="form-control" required>
-
-
-
-
       <p> Password</p>
       <input type="text" name="" id="password" class="form-control" required>
-
       <hr>
-
       <button type="submit" class="btn btn-primary btn-lg btn-block" id="createProfile"><i class="fa fa-check-circle" aria-hidden="true"></i>
       Create Profile</button>
-
-
       <br>
       <br>
-
       <footer class="footer">
-
       </footer>
-
     </div> -->
-
-
-
-
   <!-- //This section sends form data to our server -->
-
-
   <!-- Custom Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
   <script src="assets/js/search.js" type="text/javascript"></script>
   <script src="assets/js/login.js" type="text/javascript"></script>
-
-  
-
-
 </body>
-
-
 </html>
-
-  
-  
