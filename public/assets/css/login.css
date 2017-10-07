@@ -105,13 +105,14 @@ html, body{
     font-weight: lighter;
     font-size: 12px;
     font-style: italic;
+   
 }
 
   .submitButton{
     width: 45px;
     height: 45px;
     display: block;
-    margin: 0 auto -15px auto;
+    margin: 15px auto -35px auto;
     background: #fff;
     border-radius: 100%;
     border: 1px solid #0961FF;
@@ -128,6 +129,23 @@ html, body{
       color: #fff;
       outline: 0;
 }
+
+p#switchTo{
+  padding:10px;
+}
+
+p>a{
+  color:#0961FF;
+}
+
+p>a:hover{
+  text-decoration: none;
+  font-weight: bold;
+  color:#00D5FF;
+}
+
+
+
 
 /* =========================================== /*
             may use this later
