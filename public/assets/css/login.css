@@ -190,7 +190,8 @@ button#search, button#addStock{
 }
 
 button#search:hover, button#addStock:hover{
-  transform: scale(1.25)
+  background-color: #fff;
+  color: #0961FF;
 }
 
 hr{
