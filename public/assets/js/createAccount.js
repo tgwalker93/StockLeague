@@ -29,18 +29,11 @@ $(document).ready(function() {
 
 
     $("#register").on("click", function(event) {
-        userProfile = {
-            username: $("#username").val().trim(),
-            password: $("#password").val().trim(),
-            // stock1: allStocks[0].ticker,
-            // stock2: allStocks[1].ticker,
-            // stock3: allStocks[2].ticker,
-            // teamName: ""
 
-        };
-        console.log("USER PROFILE")
-        console.log(userProfile);
-        createProfile();
+        $("#stock1").attr("value", allStocks[0].ticker);
+        $("#stock2").attr("value", allStocks[1].ticker);
+        $("#stock3").attr("value", allStocks[2].ticker);
+
       });
 
 
@@ -65,20 +58,6 @@ $(document).ready(function() {
           createNewRow(stock);
         });
       }
-
-
-      function createProfile() {
-            // $.post("/api/createProfile", userProfile, function() {
-            //     window.location.href = "/profile";
-
-            // });
-
-            //   $.post("/register", userProfile, function() {
-            //     // window.location.href = "/profile";
-
-            // });
-          }
-
 
 
       function createNewRow(stock) {

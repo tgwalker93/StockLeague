@@ -23,31 +23,21 @@
 </head>
 
 <body>
-
-    <form class="login" action="" method="POST" name="registration">
-
+    <form class="login" action="/login" method='post'>
+          
         <fieldset>
-
             <legend class="legend text-center"><h3>Login</h3></legend>
 
             <div class="input">
-                <input type="email" placeholder="&#xf003 Email" id="email" name="email" required autocomplete='off' />
-                <!-- <span><i class="fa fa-asterisk"></i></span> -->
+                <input type="text" placeholder="&#xf003 Username" id="username" name="username" required autocomplete='off' />
             </div>
-
             <div class="input">
                 <input type="password" placeholder="&#xf023 Password" id="password" name="password" required />
-                <!-- <span><i class="fa fa-asterisk"></i></span> -->
             </div>
-
-            <button type="submit" value="Send" class="submitButton"><i class="fa fa-long-arrow-right"></i></button>
-
+            <div>
+                <input type="submit" value="Log In" id="submit">  
+            </div>    
         </fieldset>
-
-        <!-- <div class="feedback">
-            login successful <br /> redirecting...
-        </div> -->
-
     </form>
 </body>
 

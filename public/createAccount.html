@@ -58,31 +58,7 @@
     
 
     <div class="col-sm-5 rightSide">
-      <!-- register pannel here -->
 
-<!-- 
-      <form action="/register" method='post'>
-
-        <div id="stocks">
-        <input type="hidden" name="stock1" value="">
-        <input type="hidden" name="stock2" value="">
-        <input type="hidden" name="stock3" value="">
-        </div>
-
-        <div>
-          <label for="username">Username:</label>
-          <input type="text" name="username" id="username">
-        </div>
-
-
-        <div>
-          <label for="password">Password:</label>
-          <input type="password" name="password" id="password">
-        </div>
-        <div>
-          <input type="submit" value="register" id="register">
-        </div>
-      </form> -->
 
 
       <form class="login" action="/register" method='post'>
@@ -92,9 +68,10 @@
                   </legend>
                                      
                             <div id="stocks">
-                            <input type="hidden" name="stock1" value="">
-                            <input type="hidden" name="stock2" value="">
-                            <input type="hidden" name="stock3" value="">
+                            <input type="hidden" name="stock1" value="" id="stock1">
+                            <input type="hidden" name="stock2" value="" id="stock2">
+                            <input type="hidden" name="stock3" value="" id="stock3">
+                            <input type="hidden" name="teamName" value="" id="teamName">
                             </div>
                     
                             <div class="input">
@@ -109,7 +86,6 @@
                             </div>
                             <div class="input">
                                 <input type="submit" id="register">
-                              <!-- <input type="submit" value="register" id="register" class="submitButton"> -->
                             </div>
       </fieldset>
       </form>
