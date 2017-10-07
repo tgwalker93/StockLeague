@@ -21,6 +21,9 @@ app.use(express.static("public"));
 // app.use(bodyParser.urlencoded({ extended: false }));
 
 // Override with POST having ?_method=DELETE
+
+
+//Set up middleware for express
 app.use(methodOverride("_method"));
 app.use(bodyParser.json()) // For ajax
 app.use(bodyParser.urlencoded({extended: false})) // For html forms
@@ -28,6 +31,9 @@ app.use(session({ secret: "THIS IS A SECRET", resave: false, saveUninitialized: 
 app.use(passport.initialize())
 app.use(passport.session())
 require('./server/passport')(passport);
+
+
+
 app.use(apiRoutes);
 app.use(htmlRoutes);
 app.use(account);

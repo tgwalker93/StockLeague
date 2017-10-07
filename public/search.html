@@ -40,25 +40,48 @@
 
     </div>
 
-
-    <hr>
+    <!-- <hr>
     <p> Username</p>
-    <input type="text" name="" id="username" class="form-control" required >
+    <input type="text" name="username" id="username" class="form-control" required >
 
 
 
 
     <p> Password</p>
-    <input type="text" name="" id="password" class="form-control" required >
+    <input type="text" name="password" id="password" class="form-control" required >
 
     <hr>
 
+      
     <button type="submit" class="btn btn-primary btn-lg btn-block" id="createProfile"><i class="fa fa-check-circle" aria-hidden="true"></i>
       Create Profile</button>
-
+    
 
       <br>
-      <br>
+      <br> -->
+
+      <form action="/register" method='post'>
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username">
+        </div>
+
+        <div>
+        <input type="hidden" name="stock1" value="">
+        <input type="hidden" name="stock2" value="">
+        <input type="hidden" name="stock3" value="">
+        </div>
+
+        
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password">
+        </div>
+        <div>
+          <input type="submit" value="Log In" id="submit">
+          <input type="submit" value="register" id="register">
+        </div>
+      </form>
 
       <footer class="footer">
 

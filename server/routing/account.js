@@ -18,13 +18,20 @@ router.get('/login', (req, res, next) => {
     })
   })
 
+
+
+
   router.get('/register', (req, res, next) => {
     res.sendFile(path.join(__dirname, "../../public/home.html"));
   })
+
+
   router.post('/register', passport.authenticate('local-register', {
-    successRedirect: '/',
-    failureRedirect: '/login',
+    successRedirect: '/profile',
+    failureRedirect: '/'
   }))
-    
+
+
+
 
   module.exports = router;

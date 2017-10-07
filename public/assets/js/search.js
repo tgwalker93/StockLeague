@@ -74,10 +74,10 @@ $(document).ready(function() {
 
             // });
 
-              $.post("/register", userProfile, function() {
-                // window.location.href = "/profile";
+            //   $.post("/register", userProfile, function() {
+            //     // window.location.href = "/profile";
 
-            });
+            // });
           }
 
 

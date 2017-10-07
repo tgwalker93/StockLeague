@@ -42,13 +42,13 @@ const register = (req, username, password, done) => {
       username: username
     }
   }).then(function(user) {
-    console.log("I'M HERE!!!!!")
+    // console.log("I'M HERE!!!!!")
     if (user) {
-      console.log("I'M FIRST IF!!!!!")
+      // console.log("I'M FIRST IF!!!!!")
       return done(null, false, { message: 'an account with that username has already been created' });
     }
     if (password !== req.body.password) {
-      console.log("I'M SECOND IF!!!!!")
+      // console.log("I'M SECOND IF!!!!!")
       return done(null, false, { message: `passwords don't match` });
     }
     const newUser = {
