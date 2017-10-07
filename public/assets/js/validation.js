@@ -13,6 +13,9 @@ $(function() {
           required: true,
           //email: true
         },
+        teamName: {
+          required: true,
+        },
         password: {
           required: true,
           minlength: 3
@@ -32,7 +35,10 @@ $(function() {
         confirmPassword:{
           required: "Please confirm password"
         },
-        username: "Please provide a usename"
+
+        username: "Please provide a usename",
+
+        teamName: "Please provide the team name"
       },
       // Make sure the form is submitted to the destination defined
       // in the "action" attribute of the form when valid
