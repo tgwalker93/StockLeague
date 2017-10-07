@@ -36,6 +36,10 @@ var router = express.Router();
     res.sendFile(path.join(__dirname, "../../public/profile3.html"));
   });
 
+  router.get("/profile4", function(req, res) {
+    res.sendFile(path.join(__dirname, "../../public/profile4.html"));
+  });
+
   router.get("/stockDetails", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/stockDetails.html"));
   });

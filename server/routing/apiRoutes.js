@@ -41,7 +41,6 @@ var Robinhood = require('robinhood')(credentials, function(){
 var Robinhood = require('robinhood')(credentials, function(){
  
     //Robinhood is connected and you may begin sending commands to the api.
- 
     Robinhood.fundamentals('CRUS', function(error, response, body) {
         if (error) {
             console.error(error);

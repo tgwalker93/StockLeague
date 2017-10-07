@@ -1,35 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>PROFILE</title>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-	<!-- Font Awesome Glyphicons -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/profileMDB/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="assets/css/profileMDB/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="assets/css/profileMDB/style.css" rel="stylesheet">
 </head>
+
 <body>
-	<div>
-		<div class="container">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-md navbar-dark unique-color-dark">
 
-                <div class="panel panel-default">
-                        <div class="panel-heading">USER PROFILE</div>
-                        <div class="panel-body">CONTENT</div>
-                </div>
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">UserName</a>
 
-		</div>
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
-	    <footer class="footer">
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-	    </footer>
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Team</a>
+                </li>
+            </ul>
+            <!-- Links -->
 
-	</div>
+            <!-- Search form -->
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="h2-responsive">User Protfolio</h2>
+                <table class="table table-striped">
+                    <thead class="elegant-color-dark">
+                        <tr class="text-white">
+                            <th>Stocks</th>
+                            <th>Percent Gained</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="elegant-color">
+                            <td class='cname'><a class="portfolioSymbol" href="javascript:displayChart()"><font color="#304ffe">MSFT</font></a></td>
+                            <td class="perc">50%</td>
+                            <td class="points">10</td>
+                        </tr>
+                        <tr class="elegant-color-dark">
+                            <td class="cname"><a class='portfolioSymbol' href="javascript:displayChart()"><font color="#304ffe">AAPL</a></font></td>
+                            <td class="perc">20%</td>
+                            <td class="points">8</td>
+                        </tr>
+                        <tr class="elegant-color">
+                            <td class="cname"><a class='portfolioSymbol' href="javascript:displayChart()"><font color="#304ffe">TSLA</a></font></td>
+                            <td class="perc">60%</td>
+                            <td class="points">15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-6">
+                <h2 class="h2-responsive">DisplayChart</h2>
+                <br><br>
+                <!-- <div class="row"> -->
+                    <div id="chart_div"></div>
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="h2-responsive">Leader Board</h2>
+                <table class="table table-striped">
+                    <thead class="elegant-color-dark">
+                        <tr class="text-white">
+                            <th>Name</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="elegant-color">
+                            <td class="name">Tammy</td>
+                            <td class="points">40</td>
+                        </tr>
+                        <tr class="elegant-color-dark">
+                            <td class="name">Chris</td>
+                            <td class="points">40</td>
+                        </tr>
+                        <tr class="elegant-color">
+                            <td class="name">Tyler</td>
+                            <td class="points">40</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h2 class="h2-responsive">Stock Details</h2>
+                <table class="table table-striped">
+                    <thead class="elegant-color-dark">
+                        <tr class="text-white">
+                            <th>Symbol</th>
+                            <th>CMP</th>
+                            <th>PE Ratio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="elegant-color">
+                            <td class="symbol">MSFT</td>
+                            <td class="cmp">$76</td>
+                            <td class="ratio">30</td>
+                        </tr>
+                        <tr class="elegant-color-dark">
+                            <td class="symbol">TSLA</td>
+                            <td class="cmp">$220</td>
+                            <td class="ratio">40</td>
+                        </tr>
+                        <tr class="elegant-color">
+                            <td class="symbol">AAPL</td>
+                            <td class="cmp">$530</td>
+                            <td class="ratio">50</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="assets/js/profileMDB/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="assets/js/profileMDB/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="assets/js/profileMDB/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="assets/js/profileMDB/mdb.min.js"></script>
+    <!-- Application Scrits -->
+    <script type="text/javascript" src="assets/js/profileMDB/profile.js"></script>
 
 </body>
+
 </html>

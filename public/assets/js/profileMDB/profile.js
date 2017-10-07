@@ -57,6 +57,11 @@ function displayChart(symbol) {
         }
         var data = google.visualization.arrayToDataTable(arr, true)
         var options = {
+            backgroundColor: '#212121',
+            titleTextStyle: {
+                color: '#ffa726',
+                fontSize: 12
+            },
                 title: symbol,
                 legend: 'none',
                 hAxis: {
@@ -77,7 +82,13 @@ function displayChart(symbol) {
                         strokeWidth: 1
                     }
                 },
-                reverseCategories: true                            
+                vAxis: {
+                    textStyle: {
+                        color:'#c0ca33'
+                    }
+                },
+                reverseCategories: true,
+                height: 160                                           
             };
 
         var chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
