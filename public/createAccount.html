@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>REGISTER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- link to the Bootstrap Library -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome Glyphicons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+  <!-- link to local style sheet-->
+  <link rel="stylesheet" type="text/css" href="assets/css/register.css">
+
+  <!-- Chosen -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-sm-6 leftSide">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3>Pick your top 3 stocks!</h3>
+        </div>
+
+        <div class="col-sm-9 input">
+          <input type="text" name="stockName" placeholder="&#xf002 Search your stock"  id="stockName" class="form-control" required>
+        </div>
+
+        <div class="col-sm-3">
+          <button type="submit" class="btn btn-md" id="search"><i class="fa fa-check-circle" aria-hidden="true"></i>
+            Search</button>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-sm-12">
+            <h3>Here are the stocks: </h3>
+            <div id="stocksView">
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-1 hidden-xs"></div>
+    
+
+    <div class="col-sm-5 rightSide">
+
+
+
+      <form class="login" action="/register" method='post'>
+      <fieldset>
+                  <legend class="legend text-center">
+                    <h3>REGISTER</h3>
+                  </legend>
+                                     
+                  <div id="stocks">
+                  <input type="hidden" name="stock1" value="" id="stock1">
+                  <input type="hidden" name="stock2" value="" id="stock2">
+                  <input type="hidden" name="stock3" value="" id="stock3">
+                  <input type="hidden" name="teamName" value="" id="teamName">
+                  </div>
+                    
+                  <div class="input">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username">
+                  </div>
+            
+                  <div class="input">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password">
+                  </div>
+                  <div class="input">
+                      <input type="submit" id="register">
+                  </div>
+      </fieldset>
+      </form>
+
+    
+  
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+  <!-- Custom Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+  <script src="assets/js/createAccount.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>

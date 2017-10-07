@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Team Page</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-md navbar-dark unique-color-dark">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">TeamName</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trade</a>
+                </li>
+            </ul>
+            <!-- Links -->
+
+            <!-- Search form -->
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form>
+            <!--Dropdown primary-->
+            <!-- <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Your Profile</button>
+
+
+                <div class="dropdown-menu dropdown-unique-color-dark">
+                    <ul class="list-group">
+                        <li class="dropdown-item"><a class="link" href="#">Your team Points</a></li>
+                        <li id="your Points" class="dropdown-item"> 40</li>
+                        <li class="dropdown-item"><a class="link" href="#">Your Profile</a></li>
+                        <li class="dropdown-item"><a class="link" href="Profile.html">LogOut</a></li>
+                    </ul>
+                </div>
+            </div> -->
+            <!--/Dropdown primary-->
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-indigo" data-toggle="modal" data-target="#basicExample">Create New Team</button>
+                <!-- Modal -->
+                <div class="modal fade" id="basicExample" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-notify modal-info" role="document">
+                        <!--Content-->
+                        <div class="modal-content">
+                            <!--Header-->
+                            <div class="modal-header">
+                                <h4 class="modal-title w-100" id="myModalLabel">Create New Team</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!--Body-->
+                            <div class="modal-body">
+                                <div class="md-form form-sm">
+                                    <i class="fa fa-pencil prefix"></i>
+                                    <input type="text" id="form19" class="form-control">
+                                    <label for="form19">Team name</label>
+                                </div>
+
+                            </div>
+                            <!--Footer-->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <div class="text-center mt-1-half">
+                                    <button class="btn btn-info mb-2">Create <i class="fa fa-send ml-1"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.Content-->
+                    </div>
+                </div>
+                <!-- Modal -->
+            </div>
+            <div class="col-md-4">
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-unique" data-toggle="modal" data-target="#basic">Join Team</button>
+                <!-- Modal -->
+                <div class="modal fade" id="basic" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-notify modal-success" role="document">
+                        <!--Content-->
+                        <div class="modal-content">
+                            <!--Header-->
+                            <div class="modal-header">
+                                <h4 class="modal-title w-100" id="myModalLabel">Join Team</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                 </button>
+                            </div>
+                            <!--Body-->
+                            <div class="modal-body">
+                                <div class="md-form form-sm">
+                                    <i class="fa fa-pencil prefix"></i>
+                                    <input type="text" id="form19" class="form-control">
+                                    <label for="form19">Join team</label>
+                                </div>
+
+                            </div>
+                            <!--Footer-->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <div class="text-center mt-1-half">
+                                    <button class="btn btn-info mb-2">Join<i class="fa fa-send ml-1"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.Content-->
+                    </div>
+                </div>
+                <!-- Modal -->
+
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-deep-purple" data-toggle="modal" data-target="#centralModalDanger">Quit Team</button>
+                <!-- Central Modal Medium Danger -->
+                <div class="modal fade" id="centralModalDanger" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-notify modal-danger" role="document">
+                        <!--Content-->
+                        <div class="modal-content">
+                            <!--Header-->
+                            <div class="modal-header">
+                                <p class="heading lead">Are You Sure!!!</p>
+
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" class="white-text">&times;</span>
+                                </button>
+                            </div>
+
+                            <!--Footer-->
+                            <div class="modal-footer justify-content-center">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Yes</button>
+                                <button type="button" class="btn btn-info mb-2" data-dismiss="modal">No</button>
+                            </div>
+                        </div>
+                        <!--/.Content-->
+                    </div>
+                </div>
+                <!-- Central Modal Medium Danger-->
+            </div>
+        </div>
+
+        <div class="row">
+            
+           
+            <div class="col-md-6">
+                <h2 class="h2-responsive">Team Leader Board</h2>
+                <table class="table table-striped">
+                    <thead class="elegant-color-dark">
+                        <tr class="text-white">
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="elegant-color">
+                            <td class="text-yellow">1</td>
+                            <td class="name">Tammy</td>
+                            <td class="points">40</td>
+                        </tr>
+                        <tr class="elegant-color-dark">
+                            <td class="text-yellow">2</td>
+                            <td class="name">Chris</td>
+                            <td class="points">40</td>
+                        </tr>
+                        <tr class="elegant-color">
+                            <td class="text-yellow">3</td>
+                            <td class="name">Tyler</td>
+                            <td class="points">40</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6"> 
+                    <h2 class="h2-responsive">Your Points</h2>
+                </div>
+        </div>
+
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Application Scrits -->
+    <script type="text/javascript" src="js/app.js"></script>
+
+</body>
+
+</html>

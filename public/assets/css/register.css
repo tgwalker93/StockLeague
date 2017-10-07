@@ -1,0 +1,149 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    /* background: url() repeat fixed; */
+    /* background: #139DFF ;
+    background: -webkit-linear-gradient(top left,#00D5FF 0%, #0961FF 90%);
+    background: linear-gradient(to bottom right,#00D5FF 0%, #0961FF  90%); */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    overflow: hidden;
+    /* background color here */
+    background: linear-gradient(140deg,#4508FF, #139DFF 30%, #00FCFC);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0%   { background-position: 0% 50% }
+	50%  { background-position: 100% 50% }
+	100% { background-position: 0% 50% }
+}
+
+@-moz-keyframes Gradient {
+	0%   { background-position: 0% 50% }
+	50%  { background-position: 100% 50% }
+	100% { background-position: 0% 50% }
+}
+
+@keyframes Gradient {
+	0%   { background-position: 0% 50% }
+	50%  { background-position: 100% 50% }
+	100% { background-position: 0% 50% }
+}
+
+
+/* =========================================== /*
+            log in pannel
+/* =========================================== /*
+*/
+
+  .login{
+    position: relative;
+    /* top: 50%; */
+    width: 350px;
+    display: table;
+    margin: 200px auto 0 auto;
+    background-color: #fff;
+    border-radius: 20px;
+}
+  
+  .legend{
+    position: relative;
+    width: 100%;
+    display: block;
+    background: #0961FF;
+    padding: 5px 0px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+  .input{
+      font-family: FontAwesome;
+}
+
+  input{
+    position: relative;
+    width: 90%;
+    margin: 15px auto;
+    width: 310px;
+    height: 30px;
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid #0961FF;
+    transition: 0.2s ease-out;
+    color: darken(#fff, 30%);
+}
+
+  input:focus{
+    outline: 0;
+    /* border-color: #3D9CFF; */
+    border: 1.5px solid #00D5FF;
+    border-radius:0px;
+}
+
+  .error {
+    margin-left:20px;
+    color: red;
+    font-weight: lighter;
+    font-size: 12px;
+    font-style: italic;
+}
+
+  .submitButton{
+    width: 45px;
+    height: 45px;
+    display: block;
+    margin: 0 auto -15px auto;
+    background: #fff;
+    border-radius: 100%;
+    border: 1px solid #0961FF;
+    color: #0961FF;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 7px #fff;
+    transition: 0.2s ease-out;
+}
+
+  .submitButton:hover, .submitButton:focus{
+      background: #00D5FF;
+      border: 1px solid #00D5FF;
+      color: #fff;
+      outline: 0;
+}
+
+
+
+.leftSide{
+    margin-top:170px;
+}
+input#stockName{
+    margin-left: 50px;
+    max-width: 90%;
+}
+
+h3{
+   margin:20px 50px;
+   text-transform: uppercase;
+   font-weight: bold;
+   color:white;
+}
+
+button#search{
+    margin: 15px auto;
+    background: none;
+    color: #fff ;
+    border: 1px solid #fff ;
+}
+
+hr{
+    margin-left: 50px;
+    max-width: 88%;
+}

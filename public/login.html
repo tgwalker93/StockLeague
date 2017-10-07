@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LOG IN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- link to the Bootstrap Library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- link to local style sheet-->
+    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+
+</head>
+
+<body>
+    <form class="login" action="/login" method='post'>
+          
+        <fieldset>
+            <legend class="legend text-center"><h3>Login</h3></legend>
+
+            <div class="input">
+                <input type="text" placeholder="&#xf003 Username" id="username" name="username" required autocomplete='off' />
+            </div>
+            <div class="input">
+                <input type="password" placeholder="&#xf023 Password" id="password" name="password" required />
+            </div>
+            <div>
+                <input type="submit" value="Log In" id="submit">  
+            </div>    
+        </fieldset>
+    </form>
+</body>
+
+</html>
+
+<script src="assets/js/login.js"></script>

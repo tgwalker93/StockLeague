@@ -1,43 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<title>FriendFinder</title>
+	<title>HOME</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Latest compiled and minified CSS & JS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- link to the Bootstrap Library -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!-- Font Awesome Glyphicons -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-	<!-- Chosen -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+	<!-- link to local style sheet-->
+	<link rel="stylesheet" type="text/css" href="assets/css/home.css">
 
 
 </head>
+
 <body>
-	<div>
-		<div class="container">
+<!-- =========================== NAVBAR	=========================== -->
 
-		<div class="jumbotron">
-			<padding-top
-			<h1 class=""><i class="glyphicon glyphicon-globe" aria-hidden="true"></i> Prestige Worldwide</h1>
-					<hr>
-					<h2 class="">Build your profile of stocks. </h2>
-					<h2 class="">Compete with others!</h2>
-					<br>
+	<nav class="navbar hidden">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Stock League</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Page 1</a></li>
+				<li><a href="#">Page 2</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/createProfile"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+				<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			</ul>
+		</div>
+	</nav>
 
-					<div class="">
-						<a href="/search"><button type="button" class="btn btn-lg btn-primary"><h4><span class="glyphicon glyphicon-list-alt"></span> Get Started</h4></button></a>	
+
+
+	<!-- =========================== COUSEL	=========================== -->
+
+	<div class="row">
+
+		<!-- Carousel -->
+		<div id="carousel-example-generic" class="carousel slide col-xs-12" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="assets/img/carousel3.gif" alt="First slide">
+					<!-- Static Header -->
+					<div class="header-text hidden-xs">
+						<div class="col-md-12 text-center">
+							<h2>WELCOME TO STOCK LEAGUE</h2>
+							<h3>Let's make stock fun!!!! Compete with others</h3>
+							<br>
+							<div class="">
+								<a class="btn btn-theme btn-sm btn-min-block" href="/login">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="/createAccount">Create Account</a></div>
+						</div>
 					</div>
-
+					<!-- /header-text -->
 				</div>
-
-	    <footer class="footer">
-
-	    </footer>
-
+				<div class="item">
+					<img src="assets/img/carousel2.gif" alt="Second slide">
+					<!-- Static Header -->
+					<div class="header-text hidden-xs">
+						<div class="col-md-12 text-center">
+							<h2>WELCOME TO STOCK LEAGUE</h2>
+							<h3>Let's make stock fun!!!! Compete with others</h3>
+							<br>
+							<div class="">
+								<a class="btn btn-theme btn-sm btn-min-block" href="/login">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="/createAccount">Register</a></div>
+							</div>
+					</div>
+					<!-- /header-text -->
+				</div>
+				<div class="item">
+					<img src="assets/img/carousel1.gif" alt="Third slide">
+					<!-- Static Header -->
+					<div class="header-text hidden-xs">
+						<div class="col-md-12 text-center">
+							<h2>WELCOME TO STOCK LEAGUE</h2>
+							<h3>Let's make stock fun!!!! Compete with others</h3>
+							<br>
+							<div class="">
+								<a class="btn btn-theme btn-sm btn-min-block" href="/login">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="/createAccount">Register</a>
+							</div>
+						</div>
+					</div>
+					<!-- /header-text -->
+				</div>
+			</div>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+			<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+		</div>
+		<!-- /carousel -->
 	</div>
 
+
+
+
 </body>
+
 </html>

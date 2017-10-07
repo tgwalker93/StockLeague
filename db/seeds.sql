@@ -1,6 +1,6 @@
--- SELECT * FROM burgers
+SELECT * FROM Users;
 
-
+DROP TABLE Users
 -- INSERT INTO burgers (burger_name, devoured)
 -- VALUES ("Cheeseburger", 0);
 

@@ -8,7 +8,10 @@ h2 {
     color: #607d8b;
     text-align: center;
 }
-
+.col-md-4{
+    margin-top:30px;
+    margin-bottom:20px;
+}
 .col-md-6 {
     margin-top: 50px;
 }
@@ -53,4 +56,7 @@ th {
 
 .portfolioSymbol {
     color: red;
+}
+.btn{
+    border-radius: 30px;
 }
