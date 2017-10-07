@@ -1,69 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>PROFILE</title>
+    <meta charset="UTF-8">
+    <title>LOG IN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- link to the Bootstrap Library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<!-- Font Awesome Glyphicons -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-	<!-- Chosen -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
+    <!-- link to local style sheet-->
+    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
 
 </head>
+
 <body>
-	<div>
-		<div class="container">
-            <div class="panel panel-default">
-                <div class="panel-heading">USER PROFILE</div>
-                <div class="panel-body">
 
-                        <!-- <form action="/login" method='post'>
-                            <div>
-                              <label for="username">Email:</label>
-                              <input type="text" name="username" id="username">
-                            </div>
-                            <div>
-                              <label for="password">Password:</label>
-                              <input type="password" name="password" id="password">
-                            </div>
-                            <div>
-                              <input type="submit" value="Log In" id="submit">
-                              <input type="submit" value="register" id="register">
-                            </div>
-                          </form> -->
+    <form class="login" action="" method="POST" name="registration">
 
-                          <form action="/register" method='post'>
-                            <div>
-                              <label for="username">Email:</label>
-                              <input type="text" name="username" id="username">
-                            </div>
-                            <div>
-                              <label for="password">Password:</label>
-                              <input type="password" name="password" id="password">
-                            </div>
-                            <div>
-                              <input type="submit" value="Log In" id="submit">
-                              <input type="submit" value="register" id="register">
-                            </div>
-                          </form>
+        <fieldset>
 
-                </div>
+            <legend class="legend text-center"><h3>Login</h3></legend>
+
+            <div class="input">
+                <input type="email" placeholder="&#xf003 Email" id="email" name="email" required autocomplete='off' />
+                <!-- <span><i class="fa fa-asterisk"></i></span> -->
             </div>
 
+            <div class="input">
+                <input type="password" placeholder="&#xf023 Password" id="password" name="password" required />
+                <!-- <span><i class="fa fa-asterisk"></i></span> -->
+            </div>
 
-		</div>
+            <button type="submit" value="Send" class="submitButton"><i class="fa fa-long-arrow-right"></i></button>
 
-	    <footer class="footer">
+        </fieldset>
 
-	    </footer>
+        <!-- <div class="feedback">
+            login successful <br /> redirecting...
+        </div> -->
 
-	</div>
-
+    </form>
 </body>
+
 </html>
+
+<script src="assets/js/login.js"></script>
