@@ -94,8 +94,9 @@ function displayChart(symbol) {
         var chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
           chart.draw(data, options);
     });
-        $(window).resize(function(){
-            drawChart();
-        });     
-    }    
+             
+    } 
+    $(window).resize(function(){
+        drawChart();
+    });   
 }
