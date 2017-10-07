@@ -19,14 +19,20 @@
   },
   "homepage": "https://github.com/tgwalker93/groupProject2#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.1",
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.2.1",
     "jQuery": "^1.7.4",
     "jsdom": "^11.3.0",
     "method-override": "^2.3.9",
     "mysql": "^2.14.1",
     "mysql2": "^1.4.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "robinhood": "^1.1.1",
     "sequelize": "^4.11.1",
     "xmlhttprequest": "^1.8.0"
   }

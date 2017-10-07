@@ -4,32 +4,35 @@
 // ========================================================================== //
 
 $(function() {
-    // Initialize form validation on the registration form.
-    // It has the name attribute "registration"
-    $("form[name='registration']").validate({
+    // Initialize form validation on the registration/login form.
+    // It has the name attribute "validation"
+    $("form[name='validation']").validate({
       // Specify validation rules
       rules: {
-        // The key name on the left side is the name attribute
-        // of an input field. Validation rules are defined
-        // on the right side
-        email: {
+        username: {
           required: true,
-          // Specify that email should be validated
-          // by the built-in "email" rule
-          email: true
+          //email: true
         },
         password: {
           required: true,
-          minlength: 5
+          minlength: 3
+        },
+        confirmPassword: { 
+          equalTo: "#password",
+          minlength: 3
+           
         }
       },
       // Specify validation error messages
       messages: {
         password: {
           required: "Please provide a password",
-          minlength: "Your password must be at least 5 characters long"
+          minlength: "Your password must be at least 3 characters long"
         },
-        email: "Please enter a valid email address"
+        confirmPassword:{
+          required: "Please confirm password"
+        },
+        username: "Please provide a usename"
       },
       // Make sure the form is submitted to the destination defined
       // in the "action" attribute of the form when valid
