@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Analysis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <!-- link to the Bootstrap Library -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <!-- Font Awesome Glyphicons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+ <!-- Chosen -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/analysis.css" type="text/css">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <h1 class="blue text-center" id="stock-company" style="color:#2196F3;">Microsoft</h1>
+      <h3 class="blue text-center" id="stock-ticker"><a class= "portfolioSymbol" href="javascript:displayChart()">MSFT</a></h3>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Description -->
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-header-green">
+            <h1 class="card-heading text-center">About</h1>
+          </div>
+          <div class="card-body">
+            <p class="card-p" id="stock-about">
+              Microsoft Corp. engages in the provision of developing and marketing software and hardware services. Its products include operating systems for computing devices, servers, phones and intelligent devices. It also offers server applications for distributed computing environments, productivity applications, business solution applications, desktop and server management tools, software development tools, video games, and online advertising. It operates through the following segments: Productivity and Business Processes, Intelligent Cloud, and More Personal Computing. The Productivity and Business Processes segment consists of products and cloud services in portfolio of productivity, communication, and information services. It comprises of office commercial, office consumer, and microsoft dynamics business solutions. The Intelligent Cloud segment offers hybrid server products and cloud services. It comprises of server products and cloud services and enterprise services. The More Personal Computing segment comprises of windows, devices, gaming, and search advertising. The company was founded by William Henry Gates III in 1975 and is headquartered in Redmond, WA.
+            </p>
+          </div>
+<!--           <nav class="nav-tabs">
+            <ul class="nav nav-pills pull-left">
+              <li class="card-action"><a href="#">Link</a></li>
+              <li class="card-action"><a href="#">Link</a></li>
+              <li class="card-action"><a href="#">Link</a></li>
+              <li class="card-action"><a href="#">Link</a></li>
+            </ul>
+          </nav>  -->    
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Statistics-->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-header-blue">
+               <h1 class="card-heading text-center">Statistics</h1>
+          </div>
+          <div class="card-body">
+            <div class="col-md-6 text-center">
+              <h5 class="card-h5-value">$75.67</h5>
+              <h5 class="card-h5-head">Open</h5>
+              <h5 class="card-h5-value">$76.02</h5>
+              <h5 class="card-h5-head">Today's High</h5>
+              <h5 class="card-h5-value">$75.54</h5>
+              <h5 class="card-h5-head">Today's Low</h5>
+              <h5 class="card-h5-value">$76.12</h5>
+              <h5 class="card-h5-head">52 Wk High</h5>
+              <h5 class="card-h5-value">$56.32</h5>
+              <h5 class="card-h5-head">52 Wk Low</h5>
+            </div>
+            <div class="col-md-6 text-center">
+              <h5 class="card-h5-value">5.742M</h5>
+              <h5 class="card-h5-head">Volume</h5>
+              <h5 class="card-h5-value">23.977M</h5>
+              <h5 class="card-h5-head">Average Volume</h5>
+              <h5 class="card-h5-value">$585.81B</h5>
+              <h5 class="card-h5-head">Market Cap</h5>
+              <h5 class="card-h5-value">28.144</h5>
+              <h5 class="card-h5-head">P/E Ratio</h5>
+              <h5 class="card-h5-value">2.263</h5>
+              <h5 class="card-h5-head">Div/Yield</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Chart -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-header-orange">
+            <h1 class="card-heading text-center">Chart</h1>
+          </div>
+          <div class="card-body">
+            <div id="chart_div"></div>
+          </div>
+<!--           <nav class="nav-tabs">
+            <ul class="nav nav-pills pull-left">
+              <li><a class="card-action-orange" href="#">Link</a></li>
+              <li><a class="card-action-orange" href="#">Link</a></li>
+              <li><a class="card-action-orange" href="#">Link</a></li>
+              <li><a class="card-action-orange" href="#">Link</a></li>
+            </ul>
+          </nav> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script type="text/javascript" src="assets/js/profileapp.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</body>
+</html>
