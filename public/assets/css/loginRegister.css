@@ -243,9 +243,18 @@ margin-left: 0px;
 
 }
 
-@media (min-width: 768px) and (max-width: 1024px){
+@media (min-width: 768px) and (max-width: 1204px){
   .rightSide{
-    padding:240px 50px 100px 50px;
+    padding:240px 0px 100px 0px;
+    left:30%;
+  }
+  
+  .leftSide{
+    left: 20%;
+  }
+
+  hr{
+    max-width: 100%
   }
 }
 
