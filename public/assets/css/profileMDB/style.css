@@ -1,7 +1,7 @@
 /* YOUR CUSTOM STYLES */
 
 body {
-    background-color: #212121;
+    background-color:#212121;
 }
 
 h2 {
@@ -14,11 +14,11 @@ h2 {
 }
 
 th {
-    color: #ffa726;
+    color: white;
 }
 
 .portfolioSymbol {
-    color: limegreen;
+    color: green;
 }
 
 .perc {
@@ -26,7 +26,7 @@ th {
 }
 
 .points {
-    color: red;
+    color:#ce93d8;
 }
 
 .name {
@@ -34,15 +34,15 @@ th {
 }
 
 .symbol {
-    color: #00acc1;
+    color: blue;
 }
 
 .cmp {
-    color: #ff4081;
+    color: yellow;
 }
 
 .ratio {
-    color: #c0ca33;
+    color:#ce93d8;;
 }
 
 #chart_div {
@@ -52,11 +52,14 @@ th {
 }
 
 .portfolioSymbol {
-    color: red;
+    color: white;
 }
 .btn{
     border-radius: 30px;
 }
 .col-md-4{
     margin-top: 30px;
+}
+.text-yellow{
+    color:yellow;
 }
