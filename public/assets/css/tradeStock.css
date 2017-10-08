@@ -1,0 +1,126 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    overflow-x: hidden;
+    /* background color here */
+    background: linear-gradient(45deg,#00FCFC,#119CFF, #4408FF, #8208FF  );
+}
+
+
+
+
+.navbar{
+    background-color: #0B2448;
+    border-radius: 0px;
+    border:0px;
+    
+}
+
+
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand{
+    color:#fff;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    background-color: transparent;
+    color: #00FCFC;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
+    background-color: transparent;
+    color: #00FCFC;
+}
+
+
+.panel{
+    background: rgba(24, 53, 98, 0.70)!important;
+    border-color: transparent;
+    border-radius: 5px;
+    margin-top:30px;
+    
+    
+}
+
+#trading h4 {
+	background-color: transparent;
+	/* margin-right:30px;
+	margin-left:30px; */
+	color: #fff;
+    font-weight: lighter;
+    text-transform: uppercase;
+    padding-top:15px;
+
+}
+
+
+#trading hr{
+	border: 0.5px solid #fff; 
+    margin: 20px 30px 10px;
+    opacity: 0.9;
+
+}
+
+
+p#stockName{
+    color:#fff;
+    border: 2px solid #00FCFC;
+    padding: 10px;
+    margin: 0 15px 20px;
+    border-radius: 60px;
+}
+
+
+p#userStock{
+    color:#fff;
+    padding: 10px;
+    margin: 0 15px 20px;
+    border-radius: 60px;
+    
+}
+
+p.stock1{
+    border: 2px solid #8208FF;
+    background-color: #8208FF;
+}
+
+p.stock2{
+    border: 2px solid #1B9FFE;
+    background-color: #1B9FFE;
+}
+
+p.stock3{
+    border: 2px solid #00BABA;
+    background-color: #00BABA;
+}
+
+
+a.stocktrading{
+    text-decoration: none;
+}
+
+p#userStock:hover, p#userStock:focus, p#userStock:active, p#userStock:active{
+    /* transform: scale(1.25) */
+    border: 2px solid #00FCFC;
+    background-color: transparent;
+}
+
+button#tradeStock{
+    color:#fff;
+    border: 2px solid #00FCFC;
+    padding: 15px 25px;
+    border-radius: 60px;
+    background-color: transparent;
+    margin-top: 30px;
+    text-transform: uppercase
+}
+
+button#tradeStock:hover{
+    background: rgba(255, 255, 255, 0.70)!important;
+    color: #0B2448;;
+    font-weight: bold;
+    border: 2px solid transparent;
+   
+}
