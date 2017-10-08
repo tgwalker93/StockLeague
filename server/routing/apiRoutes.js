@@ -8,14 +8,40 @@ var passport = require("passport");
 var router = express.Router();
 
 
+//req._passport.session.user is the id that is stored in the cookie, which was sent to the client when we did "serialize" in passport.js
+//using the user ID from cookie to call info from DB
+router.get("/account/user", function(req, res) {
+	db.User.findOne({
+		where: {
+		  id: req._passport.session.user
+		}
+	  }).then(function(user) {
+	  console.log(user);
+		saveUser = {
+		  username: user.username,
+		  password: user.password,
+		  stock1: user.stock1,
+		  stock2: user.stock2,
+      stock3: user.stock3,
+      teamName: user.teamName
+	}
+    res.json(saveUser);
+});
+
+})
 
 
 
 
-
+// router.get("/test", function(req, res) {
+//     console.log("HELLO?");
+//     console.log(req);
+//     res.json(req.body);
+//   })
 
 //TEST API ROUTE USING ROBINHOOD API
 router.get("/api/test", function(req, res) {
+
 // ROBINHOOD -------------
 
 //INITIAL ROBINHOOD CREDENTIALS
@@ -53,11 +79,6 @@ var Robinhood = require('robinhood')(credentials, function(){
 });
 
 });
-
-
-
-
-
 
 	//API call to get time series using apla advantage API
 	router.get("/api/new/:name", function(req, res) {

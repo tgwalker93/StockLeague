@@ -12,7 +12,9 @@ module.exports = function(sequelize, DataTypes) {
     stock1: DataTypes.STRING,
     stock2: DataTypes.STRING,
     stock3: DataTypes.STRING,
-    teamName: DataTypes.STRING
+    teamName: DataTypes.STRING,
+    profilePoints: DataTypes.INTEGER,
+    lastLogin: DataTypes.DATEONLY
   });
   return User;
 };

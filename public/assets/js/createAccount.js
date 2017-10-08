@@ -33,6 +33,7 @@ $(document).ready(function() {
         $("#stock1").attr("value", allStocks[0].ticker);
         $("#stock2").attr("value", allStocks[1].ticker);
         $("#stock3").attr("value", allStocks[2].ticker);
+        $("#teamName").attr("value", "");
 
       });
 

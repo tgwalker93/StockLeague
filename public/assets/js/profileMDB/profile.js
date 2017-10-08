@@ -1,3 +1,27 @@
+
+var userData = {
+
+}
+function getUserData() {
+
+    $.get( "/account/user", function( data ) {
+        userData = data;
+        displayUserStocks()
+      });
+}
+function displayUserStocks() {
+    console.log(userData);
+        $("#stock1").html(userData.stock1);
+        $("#stock2").html(userData.stock2);
+        $("#stock3").html(userData.stock3);
+}
+
+getUserData();
+
+
+
+
+
 function csvJSON(csv) {
     var lines = csv.split('\n');
     var result = [];
@@ -14,8 +38,10 @@ function csvJSON(csv) {
     return JSON.stringify(result);
 }
 
+
 $('.portfolioSymbol').click(function() {
     displayChart(this.text);
+
 });
 
 function displayChart(symbol) {

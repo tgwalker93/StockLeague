@@ -1,13 +1,22 @@
+var path = require('path');
 var request = require("request");
 var express = require("express");
 var passport = require("passport");
 var db = require("../../models");
 var router = express.Router();
+var saveUser = {};
 
 
 //login route
 router.get('/login', (req, res, next) => {
     res.render('login');
+
+    //will test later
+    // res.send({
+    //   session: req.session,
+    //   user: req.user,
+    //   authenticated: req.isAuthenticated()
+    // })
   })
   router.post('/login', passport.authenticate('local', {
     successRedirect: '/profile',
@@ -31,7 +40,6 @@ router.get('/login', (req, res, next) => {
     successRedirect: '/profile',
     failureRedirect: '/'
   }))
-
 
 
   // route middleware to make sure a user is logged in
