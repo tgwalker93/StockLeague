@@ -30,9 +30,16 @@ $(document).ready(function () {
 
   $("#register").on("click", function (event) {
 
+<<<<<<< HEAD
     $("#stock1").attr("value", allStocks[0].ticker);
     $("#stock2").attr("value", allStocks[1].ticker);
     $("#stock3").attr("value", allStocks[2].ticker);
+=======
+        $("#stock1").attr("value", allStocks[0].ticker);
+        $("#stock2").attr("value", allStocks[1].ticker);
+        $("#stock3").attr("value", allStocks[2].ticker);
+        $("#teamName").attr("value", "");
+>>>>>>> e3697103a76f6d7269a06ab87e09ed7433742099
 
   });
 

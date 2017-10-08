@@ -2,6 +2,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy
 var bcrypt = require('bcrypt-nodejs');
 var db = require('../models');
+var logic = require("./serverSideLogic");
 
 var saveUser = {
 
@@ -18,13 +19,26 @@ const authenticate = (username, password, done) => {
     if (!user || !bcrypt.compareSync(password, user.password)) { 
       return done(null, false, {message: 'invalid user and password combination'});
     }
-
+    updateLogin(username);
     done(null, user);
   }).catch(done) 
 
 
 
 }
+function updateLogin(username){
+  db.User.update({
+    lastLogin: logic.getCurrentDate()
+  },{
+    where: {
+      username: username
+    }
+  }).then(function(user) {
+    console.log("Last Login date has been updated");
+
+  });
+}
+
 
 const register = (req, username, password, done) => {
   // Check whether there is a user with the signup
@@ -64,20 +78,20 @@ const register = (req, username, password, done) => {
 passport.use(new LocalStrategy(authenticate));
 passport.use('local-register', new LocalStrategy({passReqToCallback: true}, register));
 
+
 function updateStocks(saveUser) {
   db.User.update({
             stock1: saveUser.stock1,
             stock2: saveUser.stock2,
             stock3: saveUser.stock3,
-            teamName: ""
+            teamName: "",
+            profilePoints: 0,
+            lastLogin: logic.getCurrentDate()
           }, {
             where: {
               username: saveUser.username
             }
-          }).then(function(user) {
-            console.log("Stocks inserted into database")
-            console.log(user);
-          })
+          }).done();
 }
 
 // Choose what to send as a cookie to the client side

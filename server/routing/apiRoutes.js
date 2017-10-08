@@ -10,6 +10,7 @@ var router = express.Router();
 router.get("/api/test", function (req, res) {
 	// ROBINHOOD -------------
 
+<<<<<<< HEAD
 	//INITIAL ROBINHOOD CREDENTIALS
 	var credentials = {
 		username: 'tgwalker@uci.edu',
@@ -17,6 +18,29 @@ router.get("/api/test", function (req, res) {
 	};
 
 	var robinhoodAuthToken;
+=======
+//req._passport.session.user is the id that is stored in the cookie, which was sent to the client when we did "serialize" in passport.js
+//using the user ID from cookie to call info from DB
+router.get("/account/user", function(req, res) {
+	db.User.findOne({
+		where: {
+		  id: req._passport.session.user
+		}
+	  }).then(function(user) {
+	  console.log(user);
+		saveUser = {
+		  username: user.username,
+		  password: user.password,
+		  stock1: user.stock1,
+		  stock2: user.stock2,
+      stock3: user.stock3,
+      teamName: user.teamName
+	}
+    res.json(saveUser);
+});
+
+})
+>>>>>>> e3697103a76f6d7269a06ab87e09ed7433742099
 
 	//prestigeworldwide is password for other account specifically for this project, currently pending approval
 
@@ -26,6 +50,7 @@ router.get("/api/test", function (req, res) {
 	});
 
 
+<<<<<<< HEAD
 	// CHANGE CREDENTIALS TO TEMP auth token
 	credentials = {
 		token: robinhoodAuthToken
@@ -41,6 +66,26 @@ router.get("/api/test", function (req, res) {
 			console.log(body);
 			res.json(body);
 		});
+=======
+// router.get("/test", function(req, res) {
+//     console.log("HELLO?");
+//     console.log(req);
+//     res.json(req.body);
+//   })
+
+//TEST API ROUTE USING ROBINHOOD API
+router.get("/api/test", function(req, res) {
+
+// ROBINHOOD -------------
+
+//INITIAL ROBINHOOD CREDENTIALS
+var credentials = {
+    username: 'tgwalker@uci.edu',
+    password: 'forthewilling626'
+};
+
+var robinhoodAuthToken;
+>>>>>>> e3697103a76f6d7269a06ab87e09ed7433742099
 
 	});
 
@@ -53,6 +98,7 @@ router.get("/api/new/:name", function (req, res) {
 	var newStock;
 	var query = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + req.params.name + "&apikey=PF2NNSQ4ASZPFCSK"
 
+<<<<<<< HEAD
 	request(query, function (error, response, body) {
 
 		// If the request is successful
@@ -70,6 +116,13 @@ router.get("/api/new/:name", function (req, res) {
 			newStock = {
 				ticker: req.params.name,
 				price: lastClosingPrice
+=======
+	//API call to get time series using apla advantage API
+	router.get("/api/new/:name", function(req, res) {
+		var stocksArray = []
+		var newStock;
+		var query = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + req.params.name + "&apikey=PF2NNSQ4ASZPFCSK"
+>>>>>>> e3697103a76f6d7269a06ab87e09ed7433742099
 
 			}
 			res.json(newStock)
