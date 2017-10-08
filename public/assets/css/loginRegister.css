@@ -23,7 +23,7 @@ html, body{
   background: linear-gradient(to bottom right,#00D5FF 0%, #0961FF  90%); */
   font-family: 'Open Sans', sans-serif;
   font-weight: 200;
-  /* overflow: hidden; */
+  overflow-x: hidden;
   /* background color here */
   background: linear-gradient(140deg,#00FCFC,#139DFF 50%, #8208FF,  #4408FF);
 background-size: 400% 400%;
@@ -193,7 +193,7 @@ color:#00D5FF;
 }
 
 .rightSide{
-padding:250px 20px 100px 20px;
+padding:240px 20px 100px 20px;
 }
 
 input#stockName{
@@ -240,11 +240,14 @@ margin-left: 0px;
 .leftSide{
   margin-top:50px;
 }
-.rightSide{
-  padding:250px 50px 100px 50px;
-  }
+
 }
 
+@media (min-width: 768px) and (max-width: 1024px){
+  .rightSide{
+    padding:240px 50px 100px 50px;
+  }
+}
 
 /* @media (min-width: 768px){
 .col-sm-5 {
