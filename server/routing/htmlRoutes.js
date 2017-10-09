@@ -29,16 +29,15 @@ var router = express.Router();
   router.get("/profile", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/profile.html"));
   });
-  router.get("/profile2", function(req, res) {
-    res.sendFile(path.join(__dirname, "../../public/profile2.html"));
-  });
-  router.get("/profile3", function(req, res) {
-    res.sendFile(path.join(__dirname, "../../public/profile3.html"));
+
+  router.get("/team", function(req, res) {
+    res.sendFile(path.join(__dirname, "../../public/team.html"));
   });
 
-  router.get("/profile4", function(req, res) {
-    res.sendFile(path.join(__dirname, "../../public/profile4.html"));
+  router.get("/trade", function(req, res) {
+    res.sendFile(path.join(__dirname, "../../public/trade.html"));
   });
+
 
   router.get("/stockDetails", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/stockDetails.html"));

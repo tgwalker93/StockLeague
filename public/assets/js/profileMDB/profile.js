@@ -6,7 +6,11 @@ function getUserData() {
 
     $.get( "/account/user", function( data ) {
         userData = data;
-        displayUserStocks()
+        if(userData.username){
+            displayUserStocks();
+            displayUsername();
+
+        }
       });
 }
 function displayUserStocks() {
@@ -15,7 +19,9 @@ function displayUserStocks() {
         $("#stock2").html(userData.stock2);
         $("#stock3").html(userData.stock3);
 }
-
+function displayUsername() {
+    $("#username").html(userData.username);
+}
 getUserData();
 
 
@@ -40,7 +46,7 @@ function csvJSON(csv) {
 
 
 $('.portfolioSymbol').click(function() {
-    displayChart(this.text);
+    displayChart((this.text).trim());
 
 });
 
@@ -120,8 +126,8 @@ function displayChart(symbol) {
         var chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
           chart.draw(data, options);
     });
-        $(window).resize(function(){
-            drawChart();
-        });     
     }    
+    $(window).resize(function(){
+        drawChart();
+    });     
 }
