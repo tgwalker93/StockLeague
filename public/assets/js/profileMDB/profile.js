@@ -32,6 +32,7 @@ function calculateUserPoints(){
         $("#stock2Points").html(data.stock2Points.toFixed(0));
         $("#stock3Percent").html(data.stock3PercentChange.toFixed(2)+"%")
         $("#stock3Points").html(data.stock3Points.toFixed(0))
+        $("#points").html(data.totalPoints);
     });
 }
 getUserData();

@@ -53,7 +53,7 @@ router.get("/api/getProfilePoints", function(req, res) {
             var completed_requests = 0;
             for(i=0;i<stocksArray.length; i++){
 				//CHANGE START DATE FOR TESTING IF IT WORKS WHEN USER REGISTERS OTHERWISE IT WILL JUST SHOW A ZERO
-                var query = "https://www.quandl.com/api/v3/datasets/WIKI/" + stocksArray[i]  + ".json?column_index=4&start_date=" + datesArray[i] + "&end_date=" + endDate + "&collapse=daily&transform=rdiff&api_key=mduz3V-oEMMBE_BGStxp"
+                var query = "https://www.quandl.com/api/v3/datasets/WIKI/" + stocksArray[i]  + ".json?column_index=4&start_date=" + "2017-10-02"+ "&end_date=" + endDate + "&collapse=daily&transform=rdiff&api_key=mduz3V-oEMMBE_BGStxp"
                 
                     request(query, function(error, response, body) {
                         // If the request is successful
@@ -78,6 +78,9 @@ router.get("/api/getProfilePoints", function(req, res) {
 									userPoints.push((x).toFixed(4)*100*100);
 								}
 								var totalPoints = math.sum(userPoints);
+								if(totalPoints<0){
+									totalPoints = 0;
+								}
 								var userStockPoints = {
 									stock1PercentChange: userStockPercentage[0]||0,
 									stock1Points: userPoints[0]||0,
@@ -87,7 +90,20 @@ router.get("/api/getProfilePoints", function(req, res) {
 									stock3Points: userPoints[2]||0,
 									totalPoints: totalPoints
 								}
-								res.json(userStockPoints);
+								var currentDate = logic.getCurrentDate();
+								db.User.update({
+									profilePoints: userStockPoints.totalPoints,
+									lastLogin: currentDate
+								  }, {
+									where: {
+									  id: userId
+									}
+								  }).then(function(){
+
+									res.json(userStockPoints);
+
+								  });
+								
 																
                             }
                                        
@@ -154,10 +170,8 @@ var Robinhood = require('robinhood')(credentials, function(){
 				
 				// If the request is successful
 				if (!error && response.statusCode === 200) {
-			
-					// Parse the body of the site and recover just the imdbRating
-					// (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
 					var resultObj = JSON.parse(body)['Time Series (Daily)']
+					if(resultObj){
 	
 					var secondKey = Object.keys(resultObj)[0]
 	
@@ -171,6 +185,8 @@ var Robinhood = require('robinhood')(credentials, function(){
 					}
 					res.json(newStock)
 					stocksArray.push();
+
+					}
 				}
 			});
 	  });
