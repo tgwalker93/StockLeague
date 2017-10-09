@@ -5,7 +5,8 @@ html, body{
     font-weight: 200;
     overflow-x: hidden;
     /* background color here */
-    background: linear-gradient(45deg,#00FCFC,#119CFF, #4408FF, #8208FF  );
+    background: linear-gradient(45deg,#00FCFC,#109CFF, #4408FF, #8208FF  );
+    
 }
 
 
