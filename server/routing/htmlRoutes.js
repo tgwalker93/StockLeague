@@ -29,6 +29,9 @@ var router = express.Router();
   router.get("/profile", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/profile.html"));
   });
+  router.get("/profile2", function(req, res) {
+    res.sendFile(path.join(__dirname, "../../public/profile2.html"));
+  });
 
   router.get("/team", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/team.html"));

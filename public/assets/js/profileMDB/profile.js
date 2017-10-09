@@ -1,19 +1,19 @@
+$(document).ready(function() {
 
-var userData = {
-
-}
 function getUserData() {
 
-    $.get( "/account/user", function( data ) {
+    $.get("/account/user", function(data) {
         userData = data;
         if(userData.username){
             displayUserStocks();
             displayUsername();
+            calculateUserPoints();
 
         }
       });
 }
 function displayUserStocks() {
+    console.log("User stocks:")
     console.log(userData);
         $("#stock1").html(userData.stock1);
         $("#stock2").html(userData.stock2);
@@ -21,6 +21,18 @@ function displayUserStocks() {
 }
 function displayUsername() {
     $("#username").html(userData.username);
+}
+function calculateUserPoints(){
+    // Grab the URL of the website
+    var currentURL = window.location.origin;
+    $.get(currentURL+"/api/getProfilePoints", userData, function(data) {
+        $("#stock1Percent").html(data.stock1PercentChange.toFixed(2)+"%")
+        $("#stock1Points").html(data.stock1Points.toFixed(0))
+        $("#stock2Percent").html(data.stock2PercentChange.toFixed(2)+"%")
+        $("#stock2Points").html(data.stock2Points.toFixed(0));
+        $("#stock3Percent").html(data.stock3PercentChange.toFixed(2)+"%")
+        $("#stock3Points").html(data.stock3Points.toFixed(0))
+    });
 }
 getUserData();
 
@@ -131,3 +143,6 @@ function displayChart(symbol) {
         drawChart();
     });     
 }
+
+
+});
