@@ -5,6 +5,9 @@ DROP TABLE Users
 -- VALUES ("Cheeseburger", 0);
 
 -- INSERT INTO burgers (burger_name, devoured)
+-- VALUES ("Cheeseburger", 0);
+
+-- INSERT INTO burgers (burger_name, devoured)
 -- VALUES ("Baconburger", 0);
 
 

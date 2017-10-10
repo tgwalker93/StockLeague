@@ -1,5 +1,7 @@
 var request = require("request");
 var math = require('mathjs');
+var db = require('../models');
+
 
 var logic = {
     firstFunction: function(callback, param){
@@ -8,7 +10,8 @@ var logic = {
         logic.getuserPoints(param);    
     },
 
-    getUserPoints: function(userObj) {
+    getUserPoints: function(userObj, res, returnJSON) {
+
             var stock1 = userObj.stock1;
             var stock1Date = userObj.stock1Date;
             var stock2Date = userObj.stock2Date;
@@ -21,10 +24,10 @@ var logic = {
             var responses = [];
             var completed_requests = 0;
             for(i=0;i<stocksArray.length; i++){
-                var query = "https://www.quandl.com/api/v3/datasets/WIKI/" + stocksArray[i]  + ".json?column_index=4&start_date=" + "2017/10/02" + "&end_date=" + endDate + "&collapse=daily&transform=rdiff&api_key=mduz3V-oEMMBE_BGStxp"
+				//CHANGE START DATE FOR TESTING IF IT WORKS WHEN USER REGISTERS OTHERWISE IT WILL JUST SHOW A ZERO
+                var query = "https://www.quandl.com/api/v3/datasets/WIKI/" + stocksArray[i]  + ".json?column_index=4&start_date=" + "2017-10-02"+ "&end_date=" + endDate + "&collapse=daily&transform=rdiff&api_key=mduz3V-oEMMBE_BGStxp"
                 
                     request(query, function(error, response, body) {
-                        
                         // If the request is successful
                         if (!error && response.statusCode === 200) {
                             var result = JSON.parse(body);
@@ -37,7 +40,7 @@ var logic = {
 								for(i=0; i<responses.length; i++){
 									console.log("Start date is " + responses[i].dataset.start_date);
 									console.log("End date is " + responses[i].dataset.end_date);
-									if(responses[i].dataset.data>0){
+									if(responses[i].dataset.data.length>0){
 										var x = responses[i].dataset.data[0][1];
 									}else{
 										var x = 0;
@@ -47,51 +50,54 @@ var logic = {
 									userPoints.push((x).toFixed(4)*100*100);
 								}
 								var totalPoints = math.sum(userPoints);
+								if(totalPoints<0){
+									totalPoints = 0;
+								}
 								var userStockPoints = {
-									stock1PercentChange: userStockPercentage[0],
-									stock1Points: userPoints[0],
-									stock2PercentChange: userStockPercentage[1],
-									stock2Points: userPoints[1],
-									stock3PercentChange: userStockPercentage[2],
-									stock3Points: userPoints[2],
+									stock1PercentChange: userStockPercentage[0]||0,
+									stock1Points: userPoints[0]||0,
+									stock2PercentChange: userStockPercentage[1]||0,
+									stock2Points: userPoints[1]||0,
+									stock3PercentChange: userStockPercentage[2]||0,
+									stock3Points: userPoints[2]||0,
 									totalPoints: totalPoints
-                                }
-                                console.log("I'm in serverside logic");
-								return userStockPoints;
-								
-								
+								}
+								var currentDate = logic.getCurrentDate();
 
+								//update user profile with user points
+								db.User.update({
+									profilePoints: userStockPoints.totalPoints,
+									lastLogin: currentDate
+								  }, {
+									where: {
+									  id: userObj.id
+									}
+								  }).then(function(){
+                                    if(returnJSON){
+                                        res.json(userStockPoints);
+                                    } else {
+                                        console.log("Requested User points updated. No JSON returned.");
+                                    }
+									
 
+								  });
+								
+																
                             }
-            
-						
-                            
+                                       
                         }else{
                             console.log("i'm in request, but this didn't work!");
                         }
-					
-					
+							
 					});
 
-				}
+            	}
+        
         
     },
 
     getCurrentDate: function() {
         var today = new Date();
-        // var dd = today.getDate();
-        // var mm = today.getMonth()+1; //January is 0!
-        // var yyyy = today.getFullYear();
-        
-        // if(dd<10) {
-        //     dd = '0'+dd
-        // } 
-        
-        // if(mm<10) {
-        //     mm = '0'+mm
-        // } 
-        
-        // today = dd + '/' + mm + '/' + yyyy;
         return today.toISOString().split('T')[0];
     }
 }
