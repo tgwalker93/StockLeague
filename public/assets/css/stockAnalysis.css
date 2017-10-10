@@ -40,9 +40,57 @@ html, body{
     background-color: transparent;
     color: #00FCFC;
 }
+
+#companyInfo{
+    color:#fff;
+}
   
 
+.panel{
+    background: rgba(24, 53, 98, 0.70)!important;
+    border-color: transparent;
+    border-radius: 5px;
+    margin-top:30px;
+    
+    
+}
 
+#trading h4 {
+	background-color: transparent;
+	/* margin-right:30px;
+	margin-left:30px; */
+	color: #fff;
+    font-weight: lighter;
+    text-transform: uppercase;
+    padding-top:15px;
+
+}
+
+
+#trading hr{
+	border: 0.5px solid #fff; 
+    margin: 20px 30px 10px;
+    opacity: 0.9;
+
+}
+
+
+p#stockName{
+    color:#fff;
+    border: 2px solid #00FCFC;
+    padding: 10px;
+    margin: 0 15px 20px;
+    border-radius: 60px;
+}
+
+
+p.textColor{
+    color:#fff;
+    padding: 10px;
+    margin: 0 15px 20px;
+    border-radius: 60px;
+    
+}
 
 
 /* ===================== footer ===================== */
@@ -53,6 +101,7 @@ html, body{
     width: 100%;
     padding: 30px 0 0 0;
     color:#fff;
+    margin-top:30px;
   }
   
   .myfooter p{
