@@ -27,8 +27,8 @@ var logic = {
             var responses = [];
             var completed_requests = 0;
             for(i=0;i<stocksArray.length; i++){
-				//CHANGE START DATE FOR TESTING IF IT WORKS WHEN USER REGISTERS OTHERWISE IT WILL JUST SHOW A ZERO
-                var query = "https://www.quandl.com/api/v3/datasets/WIKI/" + stocksArray[i]  + ".json?column_index=4&start_date=" + "2017-10-02"+ "&end_date=" + endDate + "&collapse=daily&transform=rdiff&api_key=mduz3V-oEMMBE_BGStxp"
+				//CHANGE START DATE FOR TESTING IF IT WORKS WHEN USER REGISTERS OTHERWISE IT WILL JUST SHOW A ZERO  "2017-10-02"
+                var query = "https://www.quandl.com/api/v3/datasets/WIKI/" + stocksArray[i]  + ".json?column_index=4&start_date=" + datesArray+ "&end_date=" + endDate + "&collapse=daily&transform=rdiff&api_key=mduz3V-oEMMBE_BGStxp"
                 
                     request(query, function(error, response, body) {
                         // If the request is successful
