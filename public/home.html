@@ -15,28 +15,42 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
 	<!-- link to local style sheet-->
-	<link rel="stylesheet" type="text/css" href="assets/css/home.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/homeStyle.css">
+	
+	<!-- <script src="assets/js/validation.js" type="text/javascript"></script> -->
 
 
 </head>
 
-<body>
-<!-- =========================== NAVBAR	=========================== -->
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
+	<!-- =========================== NAVBAR	=========================== -->
 
-	<nav class="navbar hidden">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Stock League</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>
+						  <span class="icon-bar"></span>                        
+						</button>
+				<a class="navbar-brand" href="#home">STOCK LEAGUE</a>
 			</div>
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Page 1</a></li>
-				<li><a href="#">Page 2</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/createProfile"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			</ul>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#play">Play</a></li>
+					<li><a href="#resource">Resources</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a href="createAccount.html"><span class="glyphicon glyphicon-registration-mark"></span> Register</a></li>
+				</ul>
+
+
+			</div>
 		</div>
 	</nav>
 
@@ -44,76 +58,332 @@
 
 	<!-- =========================== COUSEL	=========================== -->
 
-	<div class="row">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
 
-		<!-- Carousel -->
-		<div id="carousel-example-generic" class="carousel slide col-xs-12" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-			</ol>
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner">
-				<div class="item active">
-					<img src="assets/img/carousel3.gif" alt="First slide">
-					<!-- Static Header -->
-					<div class="header-text hidden-xs">
-						<div class="col-md-12 text-center">
-							<h2>WELCOME TO STOCK LEAGUE</h2>
-							<h3>Let's make stock fun!!!! Compete with others</h3>
-							<br>
-							<div class="">
-								<a class="btn btn-theme btn-sm btn-min-block" href="/login">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="/createAccount">Create Account</a></div>
-						</div>
-					</div>
-					<!-- /header-text -->
-				</div>
-				<div class="item">
-					<img src="assets/img/carousel2.gif" alt="Second slide">
-					<!-- Static Header -->
-					<div class="header-text hidden-xs">
-						<div class="col-md-12 text-center">
-							<h2>WELCOME TO STOCK LEAGUE</h2>
-							<h3>Let's make stock fun!!!! Compete with others</h3>
-							<br>
-							<div class="">
-								<a class="btn btn-theme btn-sm btn-min-block" href="/login">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="/createAccount">Register</a></div>
-							</div>
-					</div>
-					<!-- /header-text -->
-				</div>
-				<div class="item">
-					<img src="assets/img/carousel1.gif" alt="Third slide">
-					<!-- Static Header -->
-					<div class="header-text hidden-xs">
-						<div class="col-md-12 text-center">
-							<h2>WELCOME TO STOCK LEAGUE</h2>
-							<h3>Let's make stock fun!!!! Compete with others</h3>
-							<br>
-							<div class="">
-								<a class="btn btn-theme btn-sm btn-min-block" href="/login">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="/createAccount">Register</a>
-							</div>
-						</div>
-					</div>
-					<!-- /header-text -->
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="assets/img/carousel1.gif" alt="first image" width="1200" height="100">
+				<div class="carousel-caption hidden-xs">
+					<p>Let's make stock fun!!! Compete with others</p>
+					<h1>WELCOME TO STOCK LEAGUE</h1>
+					<br>
+					<a class="btn btn-primary btn-lg" href="login.html">Login</a>
+					<a class="btn btn-primary btn-lg" href="createAccount.html">Register</a>
 				</div>
 			</div>
-			<!-- Controls -->
-			<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-				</a>
-			<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a>
+
+			<div class="item">
+				<img src="assets/img/carousel2.gif" alt="second image" width="1200" height="100">
+				<div class="carousel-caption hidden-xs">
+					<p>Let's make stock fun!!! Compete with others</p>
+					<h1>WELCOME TO STOCK LEAGUE</h1>
+					<br>
+					<a class="btn btn-primary btn-lg" href="login.html">Login</a>
+					<a class="btn btn-primary btn-lg" href="createAccount.html">Register</a>
+				</div>
+			</div>
+
+			<div class="item">
+				<img src="assets/img/carousel3.gif" alt="third image" width="1200" height="100">
+				<div class="carousel-caption hidden-xs">
+					<p>Let's make stock fun!!! Compete with others</p>
+					<h1>WELCOME TO STOCK LEAGUE</h1>
+					<br>
+					<a class="btn btn-primary btn-lg" href="login.html">Login</a>
+					<a class="btn btn-primary btn-lg" href="createAccount.html">Register</a>
+				</div>
+			</div>
 		</div>
-		<!-- /carousel -->
+
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+	</div>
+
+	<!-- =========================== ABOUT THE APP	=========================== -->
+	<div class="container" id="about">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h2>About stock League</h2>
+				<br>
+				<p>Morbi vitae erat id urna tempor ultricies quis ac leo. Proin lobortis ornare mi a sagittis. Etiam pellentesque neque
+					sem, ac efficitur tellus mollis vel. Maecenas auctor non tellus at accumsan. Sed facilisis neque a dictum mollis. Donec
+					lacinia eget lacus ac venenatis. Aliquam erat volutpat. Donec et nunc sed lorem accumsan ultricies. Pellentesque ut
+					scelerisque ante, vel faucibus purus. Maecenas posuere est dolor, non mollis nibh feugiat non. Donec sollicitudin tellus
+					sit amet urna faucibus auctor. Ut sit amet enim venenatis, </p>
+			</div>
+		</div>
+	</div>
+
+	<div id="play">
+		<div class="row">
+			<div class="col-sm-4 text-center">
+				<a href="#icon" data-toggle="collapse">
+					<img src="assets/img/search.png" class="img-circle img-responsive icon " alt="search icon" width="90px" height="90px">
+				</a>
+				<div id="icon" class="collapse icontext">
+					<h3>SEARCH</h3>
+					<p>Search for stocks you would like to collect</p>
+				</div>
+			</div>
+			<div class="col-sm-4 text-center icontext">
+				<a href="#icon1" data-toggle="collapse">
+					<img src="assets/img/pick.png" class="img-circle img-responsive icon " alt="pick icon" width="90px" height="90px">
+				</a>
+				<div id="icon1" class="collapse">
+					<h3>PICK</h3>
+					<p>Pick 3 stocks and a team you would like join</p>
+				</div>
+			</div>
+			<div class="col-sm-4 text-center icontext">
+				<a href="#icon2" data-toggle="collapse">
+					<img src="assets/img/money.png" class="img-circle img-responsive icon " alt="money icon" width="90px" height="90px">
+				</a>
+				<div id="icon2" class="collapse">
+					<h3>PLAY</h3>
+					<p>Start to trade and compete with other teams</p>
+				</div>
+			</div>
+
+		</div>
 	</div>
 
 
 
+	<!-- =========================== resources =========================== -->
+	<div class="container" id="resource">
+		<div class="row text-center">
+			<h2>Resources</h2>
+			<div class="col-sm-4 resourceVideo">
+				<div class="thumbnail ">
+					<img src="assets/img/stock3.jpg" alt="stock exchange" width="400" height="300" class="video media-fluid" data-video="https://www.youtube.com/embed/F3QpgXBtDeo"
+					 data-toggle="modal" data-target="#videoModal">
+					<h4>How The Stock Exchange Works <br>(For Dummies)</h4>
+					<p>Why are there stocks at all? Everyday in the news we hear about the stock exchange, stocks and money moving around the
+						globe ...</p>
 
+				</div>
+			</div>
+			<div class="col-sm-4 resourceVideo">
+				<div class="thumbnail">
+					<img src="assets/img/stock1.jpg" alt="stock exchange" width="400" height="300" class="video media-fluid" data-video="https://www.youtube.com/embed/s0bsugxcHSs"
+					 data-toggle="modal" data-target="#videoModal">
+					<h4>Beginners Guide to Stock Market Investment - AxisDirect</h4>
+					<p>"AxisDirect explains on how investing in stock markets can build wealth for you in the long term. Learn in a fun-tastic
+						way to know ...</p>
+				</div>
+			</div>
+			<div class="col-sm-4 resourceVideo">
+				<div class="thumbnail">
+					<img src="assets/img/stock2.jpg" alt="stock exchange" width="400" height="300" class="video media-fluid" data-video="https://www.youtube.com/embed/lj9kMcOyyQs"
+					 data-toggle="modal" data-target="#videoModal">
+					<h4>Trading Stocks Beginners Made Simple</h4>
+					<p>Trading With Degiro Successfully For Teens and Adult Beginners Made Simple. The only video you'll need to watch to start
+						...
+					</p>
+				</div>
+			</div>
+
+			<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<iframe width="100%" height="400" src="" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- =========================== second wor of video	=========================== -->
+		<div class="row text-center">
+
+			<div class="col-sm-4 resourceVideo">
+				<div class="thumbnail ">
+					<img src="assets/img/stock4.jpg" alt="stock exchange" width="400" height="300" class="video media-fluid" data-video="https://www.youtube.com/embed/-hTkwjkMrt4"
+					 data-toggle="modal" data-target="#videoModal2">
+					<h4>Learn the ways to invest in the stock market</h4>
+					<p>This Video Explains to You WHEN TO BUY A STOCK, the only video you'll need to get started. How to find ...</p>
+
+				</div>
+			</div>
+			<div class="col-sm-4 resourceVideo">
+				<div class="thumbnail">
+					<img src="assets/img/stock5.jpg" alt="stock exchange" width="400" height="300" class="video media-fluid" data-video="https://www.youtube.com/embed/gG60m9HuUYQ"
+					 data-toggle="modal" data-target="#videoModal">
+					<h4>Investing for Beginners</h4>
+					<p>We don't talk about investing for the first time enough. We take for granted that investing in the stock market has
+						become second ...</p>
+				</div>
+			</div>
+			<div class="col-sm-4 resourceVideo">
+				<div class="thumbnail">
+					<img src="assets/img/stock6.jpg" alt="stock exchange" width="400" height="300" class="video media-fluid" data-video="https://www.youtube.com/embed/artMWTTrxrw"
+					 data-toggle="modal" data-target="#videoModal">
+					<h4>How The Stock Exchange Works <br>(For Dummies)</h4>
+					<p>We tell you what are the different ways of investing in the stock market and what all are the requirements to do so.
+						Watch full video: ...</p>
+				</div>
+			</div>
+
+			<div class="modal fade" id="videoModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<iframe width="100%" height="400" src="" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- =========================== contact form =========================== -->
+
+	<div class="container-fluid" id="contact">
+		<h2 id="contactsection">Contact</h2>
+		<div class="row">
+
+			<!-- <div class="col-sm-4 text-center">
+				<p>Have question or need help.</p>
+				<p><span class="glyphicon glyphicon-map-marker"></span>Irvine, US</p>
+				<p><span class="glyphicon glyphicon-phone"></span>Phone: 949-000-000</p>
+				<p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+			</div> -->
+
+
+			<div class="col-sm-12">
+				<form action="mailto:letam245@yahoo.com" method="post" name="validation">
+					<div class="row">
+						<div class="col-sm-4 form-group">
+							<input class="form-control" type="text" placeholder="Fullname" name="fullname" id="fullname" required autocomplete='off'
+							/>
+						</div>
+						<div class="col-sm-4 form-group">
+							<input class="form-control" type="email" placeholder="Email" name="email" id="email" required autocomplete='off' />
+						</div>
+						<div class="col-sm-4 form-group">
+							<input class="form-control" type="text" placeholder="Your Team Name (optional)" name="teamName" id="teamName" autocomplete='off' />
+						</div>
+					</div>
+					<br>
+					<textarea class="form-control" id="comment form-group" name="comment" placeholder="Comment" rows="5"></textarea>
+					<br><br>
+					<div class="row text-center">
+						<div class="col-sm-12 form-group">
+							<button class="btn  btn-md" id="getHelp" type="submit">Send</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- =========================== footer =========================== -->
+
+	<footer class="myfooter">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<a class="up-arrow" href="#home" data-toggle="tooltip" title="TO TOP">
+						<span class="glyphicon glyphicon-chevron-up"></span>
+					</a><br><br>
+				</div>
+			</div>
+			<div class="row socialbox">
+				<div class="col-xs-6 col-sm-3">
+					<h4>Tyler Walker</h4>
+					<p><i class="fa fa-linkedin-square" aria-hidden="true"></i><a class="social" href="https://www.linkedin.com/in/tyler-walker-52aa6471/">LinkedIn</a></p>
+					<p><i class="fa fa-github-square" aria-hidden="true"></i><a class="social" href="https://github.com/tgwalker93">Github</a></p>
+				</div>
+
+				<div class="col-xs-6 col-sm-3">
+					<h4>Tammy Le</h4>
+					<p><i class="fa fa-linkedin-square" aria-hidden="true"></i><a class="social" href="https://www.linkedin.com/in/tammyle245/">LinkedIn</a></p>
+					<p><i class="fa fa-github-square" aria-hidden="true"></i><a class="social" href="https://github.com/letam245">Github</a></p>
+				</div>
+
+				<div class="col-xs-6 col-sm-3">
+					<h4>Prathibha Chunchu</h4>
+					<p><i class="fa fa-linkedin-square" aria-hidden="true"></i><a class="social" href="https://www.linkedin.com/in/prathibha-panga-224b1a16/">LinkedIn</a></p>
+					<p><i class="fa fa-github-square" aria-hidden="true"></i><a class="social" href="https://github.com/chunchuprati">Github</a></p>
+				</div>
+
+				<div class="col-xs-6 col-sm-3">
+					<h4>Chris Jalallian</h4>
+					<p><i class="fa fa-linkedin-square" aria-hidden="true"></i><a class="social" href="https://www.linkedin.com/in/christopherjal/">LinkedIn</a></p>
+					<p><i class="fa fa-github-square" aria-hidden="true"></i><a class="social" href="https://github.com/chrisjal/">Github</a></p>
+				</div>
+			</div> 
+		</div>
+
+		<div class="">
+			<p class="text-center copyRight">© 2017 Stock League. All rights reservered.</p>
+		</div>
+	</footer>
+
+
+
+
+
+
+
+
+	
+	<!-- =========================== scroll page script =========================== -->
+	<script>
+		$(document).ready(function () {
+			// Initialize Tooltip
+			$('[data-toggle="tooltip"]').tooltip();
+
+			// Add smooth scrolling to all links in navbar + footer link
+			$(".navbar a, footer a[href='#home']").on('click', function (event) {
+				if (this.hash !== "") {
+					event.preventDefault();
+					var hash = this.hash;
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					}, 900, function () {
+
+						window.location.hash = hash;
+					});
+				}
+			});
+		})
+
+		//-- =========================== video modal =========================== --//
+		$(function () {
+			$(".video").click(function () {
+				var theModal = $(this).data("target"),
+					videoSRC = $(this).attr("data-video"),
+					videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+				$(theModal + ' iframe').attr('src', videoSRCauto);
+				$(theModal + ' button.close').click(function () {
+					$(theModal + ' iframe').attr('src', videoSRC);
+				});
+			});
+		});
+	</script>
 </body>
 
 </html>

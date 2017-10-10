@@ -31,15 +31,15 @@
 
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
-                
-              <li class="nav-item">
-                  <a class="navbar-brand" href="#">TeamName</a>
-              </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="home.html">Home </a>
+                    <a class="navbar-brand" href="home.html">Stock League</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profile.html">Profile</a>
+                    <a class="nav-link" href="profile.html">Profile </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="team.html">Team</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="trade.html">Trade</a>
@@ -53,9 +53,10 @@
 
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="home.html"><i class="fa fa-sign-out mr-1"></i><span class="clearfix d-done d-sm-inline-block"> Logout</span></a></li>
-            </ul>            
-           
+                <li><a href="profile.html" id="userName"><i class="fa fa-sign-in mr-1" id="space"></i><span class="clearfix d-done d-sm-inline-block"> Login as: </span></a></li>
+                <li><a href="home.html" id="logout"><i class="fa fa-sign-out mr-1" id="space"></i><span class="clearfix d-done d-sm-inline-block"> Logout</span></a></li>
+            </ul>
+
         </div>
         <!-- Collapsible content -->
 
@@ -204,27 +205,70 @@
                 </table>
             </div>
             <div class="col-md-6">
-                    <h2 class="h2-responsive">Your Points</h2>
-                </div>
+                <h2 class="h2-responsive">Team Points</h2>
+            </div>
         </div>
 
     </div>
+
+    <!-- =========================== footer =========================== -->
+    <footer class="myfooter">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center hidden">
+                    <a class="up-arrow" href="#home" data-toggle="tooltip" title="TO TOP">
+                                                        <span class="glyphicon glyphicon-chevron-up"></span>
+                                                    </a><br><br>
+                </div>
+            </div>
+            <div class="row socialbox">
+                <div class="col-xs-6 col-sm-3">
+                    <h4>Tyler Walker</h4>
+                    <p><i class="fa fa-linkedin-square" aria-hidden="true"></i><a class="social" href="https://www.linkedin.com/in/tyler-walker-52aa6471/">LinkedIn</a></p>
+                    <p><i class="fa fa-github-square" aria-hidden="true"></i><a class="social" href="https://github.com/tgwalker93">Github</a></p>
+                </div>
+
+                <div class="col-xs-6 col-sm-3">
+                    <h4>Tammy Le</h4>
+                    <p><i class="fa fa-linkedin-square" aria-hidden="true"></i><a class="social" href="https://www.linkedin.com/in/tammyle245/">LinkedIn</a></p>
+                    <p><i class="fa fa-github-square" aria-hidden="true"></i><a class="social" href="https://github.com/letam245">Github</a></p>
+                </div>
+
+                <div class="col-xs-6 col-sm-3">
+                    <h4>Prathibha Chunchu</h4>
+                    <p><i class="fa fa-linkedin-square" aria-hidden="true"></i><a class="social" href="https://www.linkedin.com/in/prathibha-panga-224b1a16/">LinkedIn</a></p>
+                    <p><i class="fa fa-github-square" aria-hidden="true"></i><a class="social" href="https://github.com/chunchuprati">Github</a></p>
+                </div>
+
+                <div class="col-xs-6 col-sm-3">
+                    <h4>Chris Jalallian</h4>
+                    <p><i class="fa fa-linkedin-square" aria-hidden="true"></i><a class="social" href="https://www.linkedin.com/in/christopherjal/">LinkedIn</a></p>
+                    <p><i class="fa fa-github-square" aria-hidden="true"></i><a class="social" href="https://github.com/chrisjal/">Github</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="">
+            <p class="text-center copyRight">© 2017 Stock League. All rights reservered.</p>
+        </div>
+    </footer>
 
 
     <!-- SCRIPTS -->
     <!-- Google Charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-     <!-- JQuery -->
-     <script type="text/javascript" src="assets/js/profileMDB/jquery-3.2.1.min.js"></script>
-     <!-- Bootstrap tooltips -->
-     <script type="text/javascript" src="assets/js/profileMDB/popper.min.js"></script>
-     <!-- Bootstrap core JavaScript -->
-     <script type="text/javascript" src="assets/js/profileMDB/bootstrap.min.js"></script>
-     <!-- MDB core JavaScript -->
-     <script type="text/javascript" src="assets/js/profileMDB/mdb.min.js"></script>
-     <!-- Application Scrits -->
-     <script type="text/javascript" src="assets/js/profileMDB/profile.js"></script>
-
+    <!-- JQuery -->
+    <script type="text/javascript" src="assets/js/profileMDB/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="assets/js/profileMDB/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="assets/js/profileMDB/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="assets/js/profileMDB/mdb.min.js"></script>
+    <!-- Application Scrits -->
+    <script type="text/javascript" src="assets/js/profileMDB/profile.js"></script>
+    <script type="text/javascript" src="assets/js/profileMDB/teamMDB.js"></script>
 </body>
 
 </html>
