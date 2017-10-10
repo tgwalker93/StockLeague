@@ -46,15 +46,14 @@ router.get("/api/calculateLeague", function(req, res){
 	  }).then(function(user) {
 
 			//user is array of all members in the league
-			logic.getUserPoints(user, res, true, user.length);	
+			logic.getUserPoints(user, res, userId, true, user.length);	
 			
 	  })
 });
 router.get("/api/getProfilePoints", function(req, res) {
 			var userId = req._passport.session.user;
 			var userObj = req.user[userId-1].dataValues;
-
-			logic.getUserPoints(userObj, res, false, 1);
+			logic.getUserPoints(userObj, res, userId, false, 1);
 
 });
 

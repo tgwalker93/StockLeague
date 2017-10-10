@@ -8,7 +8,7 @@ var logic = {
     //This is an array of each obj returned for each member of a league in getUserPoints
     leagueArray: [],
 
-    getUserPoints: function(userObj, res, repeat, howManyCalls) {
+    getUserPoints: function(userObj, res, authUserId, repeat, howManyCalls) {
             var repeatUserObj = userObj;
             var repeatUserObjLength = repeatUserObj.length;
             if(repeat){
@@ -76,20 +76,27 @@ var logic = {
 									  id: userObj.id
 									}
 								  }).then(function(){
+                                    if(userObj.id===authUserId && repeat===true){
+                                        userStockPoints["isAuthUser"] = true;
+                                    }
                                     if(!repeat){
                                         res.json(userStockPoints);
                                         return;
                                     }else if(logic.counter!==repeatUserObjLength){
                                         userStockPoints["id"] = userObj.id;
                                         userStockPoints["username"] = userObj.username;
+                                        userStockPoints["teamName"] = userObj.teamName;
                                         logic.leagueArray.push(userStockPoints);
-                                        logic.getUserPoints(repeatUserObj, res, true, repeatUserObjLength);
+                                        logic.getUserPoints(repeatUserObj, res, authUserId, true, repeatUserObjLength);
                                         return;
                                     }else if(logic.counter === repeatUserObjLength) {
                                         userStockPoints["id"] = userObj.id;
                                         userStockPoints["username"] = userObj.username;
+                                        userStockPoints["teamName"] = userObj.teamName;
                                         logic.leagueArray.push(userStockPoints);
-                                        res.json(logic.leagueArray);
+                                        if(res.json){
+                                            res.json(logic.leagueArray);
+                                        }
                                         return;
                                     }else{
                                         console.log("Something went wrong. I should NOT be here.");
@@ -103,6 +110,9 @@ var logic = {
                                        
                         }else{
                             console.log("i'm in request, but this didn't work!");
+                            if(res.json){
+                                res.json(logic.leagueArray);
+                            }
                         }
 							
 					});

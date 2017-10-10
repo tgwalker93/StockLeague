@@ -1,0 +1,367 @@
+/* MAIN COLOR */
+/* 
+#0961FF - DARK BLUE
+#139DFF - MIDDLE BLUE
+#00D5FF - LIGHT BLUE
+#00FCFC - blue green
+#00FCFC,#139DFF 50%, #8208FF,  #4408FF
+#4508FF, #139DFF 30%, #00FCFC
+#EE7752, #E73C7E, #23A6D5, #23D5AB
+*/
+
+/* =========================================== /*
+            background animate
+/* =========================================== /*
+*/
+
+html, body{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* background: url() repeat fixed; */
+  /* background: #139DFF ;
+  background: -webkit-linear-gradient(top left,#00D5FF 0%, #0961FF 90%);
+  background: linear-gradient(to bottom right,#00D5FF 0%, #0961FF  90%); */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  overflow-x: hidden;
+  /* background color here */
+  background: linear-gradient(140deg,#00FCFC,#139DFF 50%, #8208FF,  #4408FF);
+background-size: 400% 400%;
+-webkit-animation: Gradient 15s ease infinite;
+-moz-animation: Gradient 15s ease infinite;
+animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+0%   { background-position: 0% 50% }
+50%  { background-position: 100% 50% }
+100% { background-position: 0% 50% }
+}
+
+@-moz-keyframes Gradient {
+0%   { background-position: 0% 50% }
+50%  { background-position: 100% 50% }
+100% { background-position: 0% 50% }
+}
+
+@keyframes Gradient {
+0%   { background-position: 0% 50% }
+50%  { background-position: 100% 50% }
+100% { background-position: 0% 50% }
+}
+
+/* =========================================== /*
+                      NAVBAR
+/* =========================================== /*
+*/
+
+.navbar{
+  background-color: #0B2448;
+  /* background: linear-gradient(45deg, #4408FF, #8208FF); */
+  border-radius: 0px;
+  border:0px;
+  z-index: 1;
+}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand{
+  color:#fff;
+  font-weight: 200;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+  background-color: transparent;
+  color: #00FCFC;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
+  background-color: transparent;
+  color: #00FCFC;
+}
+
+
+/* =========================================== /*
+          log in pannel
+/* =========================================== /*
+*/
+
+.login{
+  position: relative;
+  /* top: 50%; */
+  width: 350px;
+  display: table;
+  margin: 150px auto;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.regis{
+  position: relative;
+  /* top: 50%; */
+  width: 350px;
+  display: table;
+  margin: 110px auto;
+  background-color: #fff;
+  border-radius: 20px;
+
+}
+
+.legend{
+  position: relative;
+  width: 100%;
+  display: block;
+  background: #0961FF;
+  padding: 5px 0px;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+
+input{
+  font-family: FontAwesome;
+  position: relative;
+  width: 90%;
+  margin: 15px auto;
+  width: 310px;
+  height: 38px;
+  padding: 10px;
+  margin-left: 20px;
+  border-radius: 5px;
+  border: 1px solid #0961FF;
+  transition: 0.2s ease-out;
+  color: darken(#fff, 30%);
+}
+
+input:focus{
+  outline: 0;
+  /* border-color: #3D9CFF; */
+  border: 1.5px solid #00D5FF;
+  border-radius:0px;
+}
+
+.error {
+  margin-left:20px;
+  color: red;
+  font-weight: lighter;
+  font-size: 12px;
+  font-style: italic;
+ 
+}
+
+input.submitButton{
+  width: 55px;
+  height: 55px;
+  display: block;
+  margin: 15px auto -45px auto;
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid #0961FF;
+  color: #0961FF;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 7px #fff;
+  transition: 0.2s ease-out;
+}
+
+input.submitButton:hover, input.submitButton:focus{
+    background: #00D5FF;
+    border: 1px solid #00D5FF;
+    color: #fff;
+    outline: 0;
+}
+
+input[type="submit"] {
+  font-family: FontAwesome;
+}
+
+p#switchTo{
+padding:10px;
+}
+
+p>a{
+color:#0961FF;
+}
+
+p>a:hover{
+text-decoration: none;
+font-weight: bold;
+color:#00D5FF;
+}
+
+
+
+
+/* =========================================== /*
+          may use this later
+/* =========================================== /*
+/* .feedback{
+  position: absolute;
+  bottom: -70px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background: #2ecc71;
+  padding: 10px 0;
+  font-size: 12px;
+  display: none;
+  opacity: 0;
+  
+  &:before{
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(46, 204, 113, 0);
+    border-bottom-color: #2ecc71;
+    border-width: 10px;
+    margin-left: -10px;
+    
+  }
+} */
+
+
+
+.leftSide{
+  margin:80px 50px 0px 50px;
+}
+
+.rightSide{
+padding:0px 20px 100px 20px;
+}
+
+input#stockName{
+  margin-left: 0px;
+  max-width: 90%;
+}
+
+h3{
+ margin:20px 0px;
+ text-transform: uppercase;
+ font-weight: bold;
+ color:white;
+}
+
+
+button#search, button#addStock{
+  margin: 15px auto;
+  background: none;
+  color: #fff ;
+  border: 1px solid #fff ;
+  border-radius: 20px;
+}
+
+button#search:hover, button#addStock:hover{
+background-color: #fff;
+color: #8208FF;
+}
+
+
+hr{
+max-width: 95%;
+margin-left: 0px;
+}
+
+
+
+/* ===================== footer ===================== */
+.myfooter{
+  background-color: #0B2448;
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  padding: 30px 0 0 0;
+  color:#fff;
+}
+
+.myfooter p{
+  font-weight: 200;
+  font-size: 10px;
+}
+
+.myfooter h4{
+  font-weight: 200;
+  padding: 10px 0;
+  color: #00FCFC;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+footer a {
+  color: #fff;
+}
+
+
+footer a:hover {
+  color: #00FCFC;
+  text-decoration: none;
+} 
+
+.fa {
+  padding-right: 20px;
+  padding-left: 2px;
+  opacity: 0.8;
+  transform: scale(1.15);
+
+}
+
+.socialbox{
+  padding:0 50px;
+}
+
+p.copyRight {
+  padding: 10px 0;
+  margin: 50px 0 0 0;
+  background: linear-gradient(45deg,#00FCFC,#109BFF, #4408FF, #8208FF)
+}
+
+
+
+
+
+/* =========================================== /*
+          media query
+/* =========================================== /*
+*/
+
+@media (max-width: 1024px){
+.leftSide{
+  margin-top:80px;
+}
+
+}
+
+@media (min-width: 768px) and (max-width: 1204px){
+  .rightSide{
+    padding:0px 0px 100px 0px;
+    left:30%;
+  }
+  
+  .leftSide{
+    left: 20%;
+  }
+
+  hr{
+    max-width: 100%
+  }
+}
+
+/* @media (min-width: 768px){
+.col-sm-5 {
+  width: auto;
+
+}
+} */
+
+
+
+
+
+

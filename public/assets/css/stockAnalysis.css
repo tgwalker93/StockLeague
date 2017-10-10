@@ -1,3 +1,4 @@
+
 html, body{
     width: 100%;
     height: 100%;
@@ -11,6 +12,11 @@ html, body{
 
 
 
+
+/* =========================================== /*
+                      NAVBAR
+/* =========================================== /*
+*/
 
 .navbar{
     background-color: #0B2448;
@@ -35,6 +41,10 @@ html, body{
     color: #00FCFC;
 }
 
+#companyInfo{
+    color:#fff;
+}
+  
 
 .panel{
     background: rgba(24, 53, 98, 0.70)!important;
@@ -74,7 +84,7 @@ p#stockName{
 }
 
 
-p#userStock{
+p.textColor{
     color:#fff;
     padding: 10px;
     margin: 0 15px 20px;
@@ -82,61 +92,16 @@ p#userStock{
     
 }
 
-p.stock1{
-    border: 2px solid #8208FF;
-    background-color: #8208FF;
-}
-
-p.stock2{
-    border: 2px solid #1B9FFE;
-    background-color: #1B9FFE;
-}
-
-p.stock3{
-    border: 2px solid #00BABA;
-    background-color: #00BABA;
-}
-
-
-a.stocktrading{
-    text-decoration: none;
-}
-
-p#userStock:hover, p#userStock:focus, p#userStock:active, p#userStock:active{
-    /* transform: scale(1.25) */
-    border: 2px solid #00FCFC;
-    background-color: transparent;
-}
-
-button#tradeStock{
-    color:#fff;
-    border: 2px solid #00FCFC;
-    padding: 15px 25px;
-    border-radius: 60px;
-    background-color: transparent;
-    margin-top: 30px;
-    text-transform: uppercase
-}
-
-button#tradeStock:hover{
-    background: rgba(255, 255, 255, 0.70)!important;
-    color: #0B2448;;
-    font-weight: bold;
-    border: 2px solid transparent;
-   
-}
-
-
-
 
 /* ===================== footer ===================== */
 .myfooter{
     background-color: #0B2448;
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     width: 100%;
     padding: 30px 0 0 0;
     color:#fff;
+    margin-top:30px;
   }
   
   .myfooter p{
@@ -172,7 +137,6 @@ button#tradeStock:hover{
   
   .socialbox{
     padding:0 50px;
-    bottom: 0;
   }
   
   p.copyRight {
@@ -180,5 +144,4 @@ button#tradeStock:hover{
     margin: 50px 0 0 0;
     background: linear-gradient(45deg,#00FCFC,#109BFF, #4408FF, #8208FF)
   }
-  
   

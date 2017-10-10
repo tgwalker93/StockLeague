@@ -1,7 +1,3 @@
-// ===============================================================================
-// DEPENDENCIES
-// We need to include the path package to get the correct file path for our html
-// ===============================================================================
 var path = require("path");
 
 var db = require("../../models");
@@ -15,10 +11,6 @@ var router = express.Router();
 // ROUTING
 // ===============================================================================
 
-  // HTML GET Requests
-  // Below code handles when users "visit" a page.
-  // In each of the below cases the user is shown an HTML page of content
-  // ---------------------------------------------------------------------------
   router.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/home.html"));
   });
@@ -28,9 +20,6 @@ var router = express.Router();
 
   router.get("/profile", function(req, res) {
     res.sendFile(path.join(__dirname, "../../public/profile.html"));
-  });
-  router.get("/profile2", function(req, res) {
-    res.sendFile(path.join(__dirname, "../../public/profile2.html"));
   });
 
   router.get("/team", function(req, res) {
