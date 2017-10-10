@@ -35,39 +35,26 @@ router.get("/account/user", function(req, res) {
 })
 
 router.get("/api/calculateLeague", function(req, res){
-
+	logic.counter = 0;
 	var userId = req._passport.session.user
-
-	var stock1 = userObj.stock1;
-	var stock1Date = userObj.stock1Date;
-	var stock2Date = userObj.stock2Date;
-	var stock2 = userObj.stock2;
-	var stock3Date = userObj.stock3Date;
-	var stock3 = userObj.stock3;
-	var stocksArray = [stock1, stock2, stock3];
-	var datesArray = [stock1Date, stock2Date, stock3Date]
-	var endDate = logic.getCurrentDate();
-	var responses = [];
-	var completed_requests = 0;
+	var authUser = req.user[userId-1].dataValues;
+	logic.leagueArray = [];
 	db.User.findAll({
 		where: {
-		  teamName: userObj.teamName
+		  teamName: authUser.teamName
 		}
 	  }).then(function(user) {
-		for(i=0; i<user.length; i++){
-			var userObj = req.user[i].dataValues;
-			logic.getUserPoints(userObj, res, false);	
-		}
-		res.json("I MADE IT HERE");
 
-	
+			//user is array of all members in the league
+			logic.getUserPoints(user, res, true, user.length);	
+			
 	  })
 });
 router.get("/api/getProfilePoints", function(req, res) {
 			var userId = req._passport.session.user;
 			var userObj = req.user[userId-1].dataValues;
 
-			logic.getUserPoints(userObj, res, true);
+			logic.getUserPoints(userObj, res, false, 1);
 
 });
 

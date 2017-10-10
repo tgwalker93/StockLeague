@@ -4,14 +4,17 @@ var db = require('../models');
 
 
 var logic = {
-    firstFunction: function(callback, param){
-        // do some asynchronous work
-        // and when the asynchronous stuff is complete
-        logic.getuserPoints(param);    
-    },
+    counter: 0,
+    //This is an array of each obj returned for each member of a league in getUserPoints
+    leagueArray: [],
 
-    getUserPoints: function(userObj, res, returnJSON) {
-
+    getUserPoints: function(userObj, res, repeat, howManyCalls) {
+            var repeatUserObj = userObj;
+            var repeatUserObjLength = repeatUserObj.length;
+            if(repeat){
+                userObj = userObj[logic.counter].dataValues;
+                logic.counter += 1;
+            }
             var stock1 = userObj.stock1;
             var stock1Date = userObj.stock1Date;
             var stock2Date = userObj.stock2Date;
@@ -73,10 +76,23 @@ var logic = {
 									  id: userObj.id
 									}
 								  }).then(function(){
-                                    if(returnJSON){
+                                    if(!repeat){
                                         res.json(userStockPoints);
-                                    } else {
-                                        console.log("Requested User points updated. No JSON returned.");
+                                        return;
+                                    }else if(logic.counter!==repeatUserObjLength){
+                                        userStockPoints["id"] = userObj.id;
+                                        userStockPoints["username"] = userObj.username;
+                                        logic.leagueArray.push(userStockPoints);
+                                        logic.getUserPoints(repeatUserObj, res, true, repeatUserObjLength);
+                                        return;
+                                    }else if(logic.counter === repeatUserObjLength) {
+                                        userStockPoints["id"] = userObj.id;
+                                        userStockPoints["username"] = userObj.username;
+                                        logic.leagueArray.push(userStockPoints);
+                                        res.json(logic.leagueArray);
+                                        return;
+                                    }else{
+                                        console.log("Something went wrong. I should NOT be here.");
                                     }
 									
 
