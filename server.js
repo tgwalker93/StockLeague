@@ -6,6 +6,7 @@ var passport = require("passport");
 var account = require("./server/routing/account");
 var htmlRoutes = require("./server/routing/htmlRoutes");
 var session = require("express-session");
+// var profile = require("./assets/profileMDB/profile");
 
 var port = process.env.PORT || 3000;
 // Requiring our models for syncing
@@ -37,7 +38,7 @@ require('./server/passport')(passport);
 app.use(apiRoutes);
 app.use(htmlRoutes);
 app.use(account);
-
+// app.use(profile);
 
 
 
@@ -51,4 +52,3 @@ db.sequelize.sync().then(function() {
       console.log("App listening on PORT " + port);
     });
   });
-  

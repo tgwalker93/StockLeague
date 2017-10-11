@@ -46,8 +46,7 @@ $(document).ready(function() {
       function getStock() {
 
         $.get("/api/new/" + stock.name, function(data) {
-
-
+          
           stock = {
               ticker: data.ticker,
               price: data.price

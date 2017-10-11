@@ -1,42 +1,3 @@
-$(document).ready(function() {
-
-function getUserData() {
-
-    $.get("/account/user", function(data) {
-        userData = data;
-        if(userData.username){
-            displayUserStocks();
-            displayUsername();
-            calculateUserPoints();
-
-        }
-      });
-}
-function displayUserStocks() {
-    console.log("User stocks:")
-    console.log(userData);
-        $("#stock1").html(userData.stock1);
-        $("#stock2").html(userData.stock2);
-        $("#stock3").html(userData.stock3);
-}
-function displayUsername() {
-    $("#username").html(userData.username);
-}
-function calculateUserPoints(){
-    // Grab the URL of the website
-    var currentURL = window.location.origin;
-    $.get(currentURL+"/api/getProfilePoints", userData, function(data) {
-        $("#stock1Percent").html(data.stock1PercentChange.toFixed(2)+"%")
-        $("#stock1Points").html(data.stock1Points.toFixed(0))
-        $("#stock2Percent").html(data.stock2PercentChange.toFixed(2)+"%")
-        $("#stock2Points").html(data.stock2Points.toFixed(0));
-        $("#stock3Percent").html(data.stock3PercentChange.toFixed(2)+"%")
-        $("#stock3Points").html(data.stock3Points.toFixed(0))
-        $("#points").html(data.totalPoints);
-    });
-}
-getUserData();
-
 function csvJSON(csv) {
     var lines = csv.split('\n');
     var result = [];
@@ -54,11 +15,10 @@ function csvJSON(csv) {
 }
 
 $('.portfolioSymbol').click(function() {
-    displayChart((this.text).trim());
-
+    displayChart(this.text);
 });
 
-function displayChart(symbol) {
+function displayChart(TSLA) {
     var HttpClient = function() {
         this.get = function(aUrl, aCallback) {
             var anHttpRequest = new XMLHttpRequest();
@@ -77,7 +37,7 @@ function displayChart(symbol) {
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-        client.get("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="+symbol+"&apikey=RJKE5HTMO75D6W3M&outputsize=compact&datatype=csv", function(response){
+        client.get("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="+TSLA+"&apikey=RJKE5HTMO75D6W3M&outputsize=compact&datatype=csv", function(response){
         var timeseries = csvJSON(response);
         var timeseriesJSON = JSON.parse(timeseries);
         var arr = [];
@@ -97,11 +57,6 @@ function displayChart(symbol) {
         }
         var data = google.visualization.arrayToDataTable(arr, true)
         var options = {
-            backgroundColor: '#212121',
-            titleTextStyle: {
-                color: '#ffa726',
-                fontSize: 12
-            },
                 title: symbol,
                 legend: 'none',
                 hAxis: {
@@ -122,23 +77,14 @@ function displayChart(symbol) {
                         strokeWidth: 1
                     }
                 },
-                vAxis: {
-                    textStyle: {
-                        color:'#c0ca33'
-                    }
-                },
-                reverseCategories: true,
-                height: 160
+                reverseCategories: true
             };
 
         var chart = new google.visualization.CandlestickChart(document.getElementById('chart_div'));
           chart.draw(data, options);
     });
+        $(window).resize(function(){
+            drawChart();
+        });
     }
-    $(window).resize(function(){
-        drawChart();
-    });
 }
-
-
-});

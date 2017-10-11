@@ -7,12 +7,6 @@ var logic = require("../serverSideLogic");
 var router = express.Router();
 var math = require('mathjs');
 
-
-
-
-
-
-
 //req._passport.session.user is the id that is stored in the cookie, which was sent to the client when we did "serialize" in passport.js
 //using the user ID from cookie to call info from DB
 router.get("/account/user", function(req, res) {
@@ -54,7 +48,7 @@ router.get("/api/getProfilePoints", function(req, res) {
             for(i=0;i<stocksArray.length; i++){
 				//CHANGE START DATE FOR TESTING IF IT WORKS WHEN USER REGISTERS OTHERWISE IT WILL JUST SHOW A ZERO
                 var query = "https://www.quandl.com/api/v3/datasets/WIKI/" + stocksArray[i]  + ".json?column_index=4&start_date=" + "2017-10-02"+ "&end_date=" + endDate + "&collapse=daily&transform=rdiff&api_key=mduz3V-oEMMBE_BGStxp"
-                
+
                     request(query, function(error, response, body) {
                         // If the request is successful
                         if (!error && response.statusCode === 200) {
@@ -73,7 +67,7 @@ router.get("/api/getProfilePoints", function(req, res) {
 									}else{
 										var x = 0;
 									}
-									
+
 									userStockPercentage.push((x).toFixed(4)*100);
 									userPoints.push((x).toFixed(4)*100*100);
 								}
@@ -103,14 +97,14 @@ router.get("/api/getProfilePoints", function(req, res) {
 									res.json(userStockPoints);
 
 								  });
-								
-																
+
+
                             }
-                                       
+
                         }else{
                             console.log("i'm in request, but this didn't work!");
                         }
-							
+
 					});
 
 				}
@@ -145,7 +139,7 @@ var Robinhood = require('robinhood')(credentials, function(){
     token: robinhoodAuthToken
 };
 var Robinhood = require('robinhood')(credentials, function(){
- 
+
     //Robinhood is connected and you may begin sending commands to the api.
     Robinhood.fundamentals('CRUS', function(error, response, body) {
         if (error) {
@@ -155,7 +149,7 @@ var Robinhood = require('robinhood')(credentials, function(){
 		console.log(body);
 		res.json(body);
     });
- 
+
 });
 
 });
@@ -167,21 +161,21 @@ var Robinhood = require('robinhood')(credentials, function(){
 		var query = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + req.params.name + "&apikey=PF2NNSQ4ASZPFCSK"
 
 		request(query, function(error, response, body) {
-				
+
 				// If the request is successful
 				if (!error && response.statusCode === 200) {
 					var resultObj = JSON.parse(body)['Time Series (Daily)']
 					if(resultObj){
-	
+
 					var secondKey = Object.keys(resultObj)[0]
-	
+
 					var lastClosingPrice = resultObj[secondKey]['4. close']
-					
+
 					console.log("SHOULD BE LATEST STOCK PRICE: " + resultObj[secondKey]['4. close']);
 					newStock = {
 						ticker: req.params.name,
 						price: lastClosingPrice
-	
+
 					}
 					res.json(newStock)
 					stocksArray.push();
