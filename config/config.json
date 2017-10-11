@@ -8,15 +8,15 @@
   },
   "test": {
     "username": "root",
-    "password": "Mario626",
-    "database": "password",
+    "password": "password",
+    "database": "stocks_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "Mario626",
-    "database": "password",
+    "password": "password",
+    "database": "stocks_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
