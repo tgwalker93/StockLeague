@@ -52,7 +52,8 @@ const register = (req, username, password, done) => {
       password: req.body.password,
       stock1: req.body.stock1,
       stock2: req.body.stock2,
-      stock3: req.body.stock3
+      stock3: req.body.stock3,
+      teamName: req.body.teamName
     }
     if (user) {
       return done(null, false, { message: 'an account with that username has already been created' });
@@ -71,7 +72,7 @@ const register = (req, username, password, done) => {
       
     })
 
-  })
+  }).catch(done)
 
 }
 
@@ -88,14 +89,15 @@ function updateStocks(saveUser) {
             stock2Date: currentDate,
             stock3: saveUser.stock3,
             stock3Date: currentDate,
-            teamName: "",
+            teamName: saveUser.teamName,
             profilePoints: 0,
             lastLogin: currentDate
           }, {
             where: {
               username: saveUser.username
             }
-          }).done();
+          }).done()
+
 }
 
 // Choose what to send as a cookie to the client side

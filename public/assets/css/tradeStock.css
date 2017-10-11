@@ -74,7 +74,7 @@ p#stockName{
 }
 
 
-p#userStock{
+p#stock1, p#stock2, p#stock3{
     color:#fff;
     padding: 10px;
     margin: 0 15px 20px;
@@ -102,7 +102,18 @@ a.stocktrading{
     text-decoration: none;
 }
 
-p#userStock:hover, p#userStock:focus, p#userStock:active, p#userStock:active{
+p#stock1:hover, p#stock1:focus, p#userStock1:active, p#userStock2:active{
+    /* transform: scale(1.25) */
+    border: 2px solid #00FCFC;
+    background-color: transparent;
+}
+
+p#stock2:hover, p#stock2:focus, p#userStock2:active, p#userStock2:active{
+    /* transform: scale(1.25) */
+    border: 2px solid #00FCFC;
+    background-color: transparent;
+}
+p#stock3:hover, p#stock3:focus, p#userStock3:active, p#userStock3:active{
     /* transform: scale(1.25) */
     border: 2px solid #00FCFC;
     background-color: transparent;

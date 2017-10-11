@@ -1,17 +1,52 @@
+getUserData();
+
+ var userData = {
+
+ }
+ 
+function getUserData() {
+$.get("/account/user", function(data) {
+  userData = data;
+  if(userData.username){
+      displayUserStocks();
 
 
-
-//make the call on the front-end and get the data! 
-$("#test").on("click", function(event) {
-            $.get("/api/test", function(data) {
-              
-
-              console.log(data.results[0]);
-              console.log(data.results[0][1])
-              $("#body").html("<p>" +  JSON.stringify(data.results[0]) +" </p>");
-              
-                
-
-
-  });
+  }
 });
+}
+
+
+function displayUserStocks() {
+console.log("User stocks:")
+console.log(userData);
+  $("#stock1").html(userData.stock1);
+  $("#stock2").html(userData.stock2);
+  $("#stock3").html(userData.stock3);
+}
+ 
+ $("#search").on("click", function(event) {
+    event.preventDefault();
+    var stock = {
+      name: $("#stockName").val().trim(),
+
+    };
+    getStock(stock);
+  });
+
+
+  function getStock(stock) {
+    
+            $.get("/api/trade/" + stock.name, function(data) {
+    
+    
+              // stock = {
+              //     ticker: data.ticker,
+              //     price: data.price
+              // }
+              //   allStocks.push(stock);
+              //   console.log(allStocks);
+              //   console.log(allStocks[0])
+              //   console.log(allStocks[1])
+              // createNewRow(stock);
+            });
+          }

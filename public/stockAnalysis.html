@@ -16,8 +16,12 @@
 
     <!-- link to local style sheet-->
     <link rel="stylesheet" type="text/css" href="assets/css/stockAnalysis.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/typeahead.css">
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
     <script src="assets/js/jquery.validate.min.js"></script>
+
+    <!-- For Accounting formatting-->
+    <script src='assets/js/accounting.min.js'></script>
 
     <!-- Chosen -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
@@ -33,7 +37,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 					  <span class="icon-bar"></span>
 					  <span class="icon-bar"></span>
-					  <span class="icon-bar"></span>                        
+					  <span class="icon-bar"></span>
 					</button>
                 <a class="navbar-brand" href="home.html">Stock League</a>
             </div>
@@ -52,16 +56,14 @@
 
                 <form class="navbar-form navbar-right">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" id="search" name="search">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit">
-							  <i class="glyphicon glyphicon-search"></i>
-							</button>
-                        </div>
+                        <input type="text" class="form-control typeahead" placeholder="Search" id="search" name="search">
+                        <!-- <div class="input-group-btn">
+                            <button class="btn btn-default" id="btnSearchFundamentals">
+            							           <i class="glyphicon glyphicon-search"></i>
+            							  </button>
+                        </div> -->
                     </div>
                 </form>
-
-
             </div>
         </div>
     </nav>
@@ -70,17 +72,14 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="panel">
-                    <div id="trading">
-                        <h4 id="companyName" class="text-center">Company Name</h4>
+                    <div id="companyName">
                         <hr>
                     </div>
-                    <div class="panel-body text-center">
-                        <p class="textColor" id="companyInfo">Company Information will appear here</p>
+                    <div class="panel-body text-center" id="companyInfo">
+                        <!-- <p class="textColor" id="companyInfo">Company Information will appear here</p> -->
                     </div>
                 </div>
             </div>
-
-          
         </div>
 
         <div class="row">
@@ -91,14 +90,11 @@
                         <hr>
                     </div>
                     <div class="panel-body text-center">
-                        <p class="textColor" id="companyName">chart image</p>
+                          <div id="chart_div"></div>
                     </div>
                 </div>
 
             </div>
-
-
-
 
             <div class="col-sm-6">
                 <div class="panel">
@@ -107,15 +103,17 @@
                         <hr>
                     </div>
                     <div class="panel-body text-center">
-                        <p class="textColor" id="stockDetail">numberssssss</p>
+                      <div id="stockDetails" class="col-sm-6">
+
+                      </div>
+                      <div id="stockDetails2" class="col-sm-6">
+
+                      </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
     <!-- =========================== footer =========================== -->
 
@@ -161,12 +159,6 @@
         </div>
     </footer>
 
-
-
-
-
-
-
     <!-- Custom Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
     <script>
@@ -189,6 +181,17 @@
             });
         })
     </script>
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Twitter API for TypeAhead-->
+    <script src="http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script>
+    <script src="assets/js/typeahead.min.js"></script>
+
+    <!--Application js files -->
+    <script type="text/javascript" src="assets/js/profileMDB/profile.js"></script>
+    <script type="text/javascript" src="assets/js/stockAnalysis.js"></script>
+
 </body>
 
 </html>

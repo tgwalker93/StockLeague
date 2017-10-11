@@ -7,11 +7,15 @@ html, body{
     overflow-x: hidden;
     /* background color here */
     background: linear-gradient(45deg,#00FCFC,#109CFF, #4408FF, #8208FF  );
-    
 }
 
-
-
+h4{
+  text-align: center;
+  color: white;
+}
+p{
+  color:white;
+}
 
 /* =========================================== /*
                       NAVBAR
@@ -22,7 +26,7 @@ html, body{
     background-color: #0B2448;
     border-radius: 0px;
     border:0px;
-    
+
 }
 
 
@@ -44,15 +48,15 @@ html, body{
 #companyInfo{
     color:#fff;
 }
-  
+
 
 .panel{
     background: rgba(24, 53, 98, 0.70)!important;
     border-color: transparent;
     border-radius: 5px;
     margin-top:30px;
-    
-    
+
+
 }
 
 #trading h4 {
@@ -68,7 +72,7 @@ html, body{
 
 
 #trading hr{
-	border: 0.5px solid #fff; 
+	border: 0.5px solid #fff;
     margin: 20px 30px 10px;
     opacity: 0.9;
 
@@ -89,9 +93,35 @@ p.textColor{
     padding: 10px;
     margin: 0 15px 20px;
     border-radius: 60px;
-    
+
 }
 
+.btn {
+	font-size: 14px;
+	height: 40px;
+}
+.hero-unit {
+	font-size: 14px;
+}
+input[type="text"] {
+	font-size: 24px;
+	height:36px;
+	margin-top: 0px;
+}
+/*.master-name {
+	font-style: italic;
+}*/
+.typeahead {
+	margin-top: 0px;
+}
+.tt-dropdown-menu {
+	margin-top: 0px;
+	padding-top: 2px;
+	display: block;
+}
+.twitter-typeahead .tt-hint {
+	color: #909090;
+}
 
 /* ===================== footer ===================== */
 .myfooter{
@@ -103,12 +133,12 @@ p.textColor{
     color:#fff;
     margin-top:30px;
   }
-  
+
   .myfooter p{
     font-weight: 200;
     font-size: 10px;
   }
-  
+
   .myfooter h4{
     font-weight: 200;
     padding: 10px 0;
@@ -116,32 +146,31 @@ p.textColor{
     font-size: 13px;
     letter-spacing: 0.1em;
   }
-  
+
   footer a {
     color: #fff;
   }
-  
-  
+
+
   footer a:hover {
     color: #00FCFC;
     text-decoration: none;
-  } 
-  
+  }
+
   .fa {
     padding-right: 20px;
     padding-left: 2px;
     opacity: 0.8;
     transform: scale(1.15);
-  
+
   }
-  
+
   .socialbox{
     padding:0 50px;
   }
-  
+
   p.copyRight {
     padding: 10px 0;
     margin: 50px 0 0 0;
     background: linear-gradient(45deg,#00FCFC,#109BFF, #4408FF, #8208FF)
   }
-  

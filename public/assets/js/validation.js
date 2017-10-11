@@ -14,7 +14,7 @@ $(function() {
           //email: true
         },
         teamName: {
-          required: true,
+          required: false,
         },
         password: {
           required: true,

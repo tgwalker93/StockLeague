@@ -66,7 +66,7 @@ var logic = {
 									totalPoints: totalPoints
 								}
 								var currentDate = logic.getCurrentDate();
-
+                                var newUserPoints = userStockPoints.totalPoints + userObj.totalPoints;
 								//update user profile with user points
 								db.User.update({
 									profilePoints: userStockPoints.totalPoints,

@@ -1,7 +1,7 @@
-$(document).ready(function() {
-
+  var userData = {
+        
+    }
 function getUserData() {
-
     $.get("/account/user", function(data) {
         userData = data;
         if(userData.username){
@@ -144,6 +144,3 @@ function displayChart(symbol) {
         drawChart();
     });     
 }
-
-
-});

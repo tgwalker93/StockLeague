@@ -31,8 +31,8 @@ var router = express.Router();
   });
 
 
-  router.get("/stockDetails", function(req, res) {
-    res.sendFile(path.join(__dirname, "../../public/stockDetails.html"));
+  router.get("/stockAnalysis", function(req, res) {
+    res.sendFile(path.join(__dirname, "../../public/stockAnalysis.html"));
   });
 
   router.get("/login", function(req, res) {

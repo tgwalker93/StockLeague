@@ -29,11 +29,28 @@ $(document).ready(function() {
 
 
     $("#register").on("click", function(event) {
+      
+        if(allStocks[0]!==""&& allStocks[0]){
+          $("#stock1").attr("value", allStocks[0].ticker);
+        }else{
+          $("#stock1").attr("value", "MSFT");
+        }
+        if(allStocks[1]!==""&& allStocks[1]){
+          $("#stock2").attr("value", allStocks[1].ticker);
+        }else{
+          $("#stock2").attr("value", "GOOGL");
+        }
+        if(allStocks[2]!=="" && allStocks[2]){
+          $("#stock3").attr("value", allStocks[2].ticker);
+        }else{
+          $("#stock3").attr("value", "AAPL");
+        }
+        console.log(allStocks);
 
-        $("#stock1").attr("value", allStocks[0].ticker);
-        $("#stock2").attr("value", allStocks[1].ticker);
-        $("#stock3").attr("value", allStocks[2].ticker);
-        $("#teamName").attr("value", "");
+        var testTeam = $("#teamName").val().trim()
+        console.log(testTeam);
+        $("#teamName").attr("value", testTeam);
+
 
       });
 
@@ -79,7 +96,7 @@ $(document).ready(function() {
 
         //title
         var newPostTitle = $("<h2>");
-        newPostTitle.text("Stock Ticker: " + stock.ticker + "             ||              Last Closing Stock Price: " + stock.price);
+        newPostTitle.text("Stock Ticker: " + stock.ticker + "             –              Last Closing Stock Price: $" + stock.price);
 
         newPostPanelHeading.append(deleteBtn);
         newPostPanelHeading.append(newPostTitle);
