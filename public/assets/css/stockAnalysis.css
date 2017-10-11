@@ -9,12 +9,42 @@ html, body{
     background: linear-gradient(45deg,#00FCFC,#109CFF, #4408FF, #8208FF  );
 }
 
-h4{
+h2{
   text-align: center;
   color: white;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 0.1em;
 }
 p{
   color:white;
+}
+
+p.companyPara{
+    padding: 0px 20px 10px;
+    font-weight: lighter;
+}
+p.stockLow market_cap{
+    text-align: left;
+}
+
+h4{
+    text-align: center;
+    font-size: 35px;
+    padding-top: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+h4#bio{
+    padding-top:20px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.rightSide{
+    padding-bottom: 40px;
 }
 
 /* =========================================== /*
@@ -54,7 +84,7 @@ p{
     background: rgba(24, 53, 98, 0.70)!important;
     border-color: transparent;
     border-radius: 5px;
-    margin-top:30px;
+    margin-top:40px;
 
 
 }
@@ -68,6 +98,12 @@ p{
     text-transform: uppercase;
     padding-top:15px;
 
+}
+
+hr{
+    
+    margin: 30px 50px 20px 50px;
+    opacity: 0.9;
 }
 
 
@@ -104,15 +140,18 @@ p.textColor{
 	font-size: 14px;
 }
 input[type="text"] {
-	font-size: 24px;
+	font-size: 20px;
 	height:36px;
-	margin-top: 0px;
+    margin-top: 30px;
+    font-family: sans-serif, FontAwesome;
+    background: #fff;
 }
 /*.master-name {
 	font-style: italic;
 }*/
 .typeahead {
-	margin-top: 0px;
+    margin-top: 0px;
+    background-color: #fff;
 }
 .tt-dropdown-menu {
 	margin-top: 0px;
@@ -145,6 +184,7 @@ input[type="text"] {
     color: #00FCFC;
     font-size: 13px;
     letter-spacing: 0.1em;
+    text-align: left;
   }
 
   footer a {

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>TRADE STOCKS</title>
+    <title>STOCK ANALYSIS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- link to the Bootstrap Library -->
@@ -39,41 +39,47 @@
 					  <span class="icon-bar"></span>
 					  <span class="icon-bar"></span>
 					</button>
-                <a class="navbar-brand" href="home.html">Stock League</a>
+                <a class="navbar-brand" href="/home">Stock League</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="trade.html">Trade</a></li>
-                    <li class="active"><a href="stockAnalysis.html">Stock Analysis</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/team">League</a></li>
+                    <!-- <li><a href="trade.html">Trade</a></li> -->
+                    <li class="active"><a href="/stockAnalysis">Stock Analysis</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="profile.html" id="userName"><span class="glyphicon glyphicon-log-in"></span> Login as: </a></li>
-                    <li><a href="home.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    <!-- <li><a href="profile.html" id="userName"><span class="glyphicon glyphicon-log-in"></span> Login as: </a></li> -->
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 </ul>
-
-                <form class="navbar-form navbar-right">
-                    <div class="input-group">
-                        <input type="text" class="form-control typeahead" placeholder="Search" id="search" name="search">
-                        <!-- <div class="input-group-btn">
-                            <button class="btn btn-default" id="btnSearchFundamentals">
-            							           <i class="glyphicon glyphicon-search"></i>
-            							  </button>
-                        </div> -->
-                    </div>
-                </form>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <div class="row">
+        <div class="row text-center">
             <div class="col-sm-12">
+                <form class="form-group">
+                    <!-- <div class="input-group"> -->
+                        <input type="text" class="typeahead" placeholder="&#xf002 Search stock" id="search" name="search">
+                        <!-- <div class="input-group-btn">
+                                    <button class="btn btn-default" id="btnSearchFundamentals">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                     </button>
+                                </div> -->
+                    <!-- </div> -->
+                </form>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-12 bio">
                 <div class="panel">
                     <div id="companyName">
-                        <hr>
+                       <h4 id="bio">Company Bio</h4>
+                       <hr>
                     </div>
                     <div class="panel-body text-center" id="companyInfo">
                         <!-- <p class="textColor" id="companyInfo">Company Information will appear here</p> -->
@@ -82,33 +88,33 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row bottomPart">
             <div class="col-sm-6">
                 <div class="panel">
                     <div id="trading">
-                        <h4 class="text-center">Chart</h4>
+                        <h2 class="text-center">Chart</h2>
                         <hr>
                     </div>
                     <div class="panel-body text-center">
-                          <div id="chart_div"></div>
+                        <div id="chart_div"></div>
                     </div>
                 </div>
 
             </div>
 
-            <div class="col-sm-6">
-                <div class="panel">
+            <div class="col-sm-6 ">
+                <div class="panel rightSide">
                     <div id="trading">
-                        <h4 class="text-center">Stock Details</h4>
+                        <h2 class="text-center">Stock Details</h2>
                         <hr>
                     </div>
                     <div class="panel-body text-center">
-                      <div id="stockDetails" class="col-sm-6">
+                        <div id="stockDetails" class="col-sm-6" style="text-align:center">
 
-                      </div>
-                      <div id="stockDetails2" class="col-sm-6">
+                        </div>
+                        <div id="stockDetails2" class="col-sm-6" style="text-align:center">
 
-                      </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -185,7 +191,8 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <!-- Twitter API for TypeAhead-->
-    <script src="http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script>
+    <!-- <script src="http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hogan.js/3.0.2/hogan.js"></script>
     <script src="assets/js/typeahead.min.js"></script>
 
     <!--Application js files -->
@@ -193,5 +200,10 @@
     <script type="text/javascript" src="assets/js/stockAnalysis.js"></script>
 
 </body>
+
+<script>
+    $(".bio").hide();
+    $(".bottomPart").hide();
+</script>
 
 </html>

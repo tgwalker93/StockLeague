@@ -5,54 +5,104 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Team Page</title>
+    <title>Profile Page</title>
+    <!-- link to the Bootstrap Library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!-- link to local style sheet-->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/profileMDB/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="assets/css/profileMDB/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Material Design Bootstrap -->
-    <link href="assets/css/profileMDB/mdb.min.css" rel="stylesheet">
+    <!-- <link href="assets/css/profileMDB/mdb.min.css" rel="stylesheet"> -->
     <!-- Your custom styles (optional) -->
     <link href="assets/css/profileMDB/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>                        
+                                </button>
+                    <a class="navbar-brand" href="/home">Stock League</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li ><a href="/profile">Profile</a></li>
+                        <li class="active"><a href="/team">League</a></li>
+                        <!-- <li><a href="trade.html">Trade</a></li> -->
+                        <li ><a href="/stockAnalysis">Stock Analysis</a></li>
+                    </ul>
+    
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- <li><a href="profile.html" id="userName"><span class="glyphicon glyphicon-log-in"></span> Login as: </a></li> -->
+                        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+    
+                    <!--         
+                            <form class="navbar-form navbar-right">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" id="search" name="search">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit">
+                                          <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form> -->
+    
+    
+                </div>
+            </div>
+        </nav>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-md navbar-dark unique-color-dark">
+    <!-- <nav class="navbar navbar-expand-md navbar-dark unique-color-dark"> -->
 
         <!-- Navbar brand -->
 
         <!-- Collapse button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> -->
 
         <!-- Collapsible content -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
 
             <!-- Links -->
 
             <!-- Links -->
-            <ul class="navbar-nav mr-auto">
+            <!-- <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="navbar-brand"  href="/home">Stock League</a>
+                    <a class="navbar-brand" href="/home">Stock League</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link " href="/profile">Profile </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/team">Team</a>
+                    <a class="nav-link" href="/team">League</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/trade">Trade</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" href="/stockAnalysis">Stock Analysis</a>
+                    <a class="nav-link" href="/stockAnalysis">Stock Analysis</a>
                 </li>
-            </ul>
+            </ul> -->
             <!-- Links -->
 
             <!-- Search form -->
-            <form class="form-inline">
+            <!-- <form class="form-inline">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
 
             </form>
@@ -61,10 +111,10 @@
                 <li><a href="home.html" id="logout"><i class="fa fa-sign-out mr-1" id="space"></i><span class="clearfix d-done d-sm-inline-block"> Logout</span></a></li>
             </ul>
 
-        </div>
+        </div> -->
         <!-- Collapsible content -->
 
-    </nav>
+    <!-- </nav> -->
     <!--/.Navbar-->
 
     <!-- Main Content -->
@@ -72,7 +122,7 @@
         <div class="row">
             <div class="col-md-4">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-indigo" data-toggle="modal" data-target="#basicExample">Create New Team</button>
+                <button type="button" class="btn btn-indigo hidden" data-toggle="modal" data-target="#basicExample">Create New Team</button>
                 <!-- Modal -->
                 <div class="modal fade" id="basicExample" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-notify modal-info" role="document">
@@ -110,7 +160,7 @@
             <div class="col-md-4">
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-purple" data-toggle="modal" data-target="#basic">Join Team</button>
+                <button type="button" class="btn btn-purple hidden" data-toggle="modal" data-target="#basic">Join Team</button>
                 <!-- Modal -->
                 <div class="modal fade" id="basic" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-notify modal-success" role="document">
@@ -147,7 +197,7 @@
 
             </div>
             <div class="col-md-4">
-                <button type="button" class="btn btn-green" data-toggle="modal" data-target="#centralModalDanger">Quit Team</button>
+                <button type="button" class="btn btn-green hidden" data-toggle="modal" data-target="#centralModalDanger">Quit Team</button>
                 <!-- Central Modal Medium Danger -->
                 <div class="modal fade" id="centralModalDanger" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-notify modal-danger" role="document">
@@ -212,14 +262,14 @@
                         <tr class="elegant-color">
                             <td class="text-yellow">5</td>
                             <td class="name" id="name5"></td>
-                            <td  class="points" id="points5"></td>
+                            <td class="points" id="points5"></td>
                         </tr>
 
                     </tbody>
                 </table>
             </div>
             <div class="col-md-6">
-                <h2 class="h2-responsive">Your Points</h2>
+                <h2 class="h2-responsive">Team Points</h2>
                 <h2 class="h2-responsive" id="yourPoints"></h2>
             </div>
         </div>
@@ -231,10 +281,10 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 text-center hidden">
+                <div class="col-sm-12 text-center">
                     <a class="up-arrow" href="#home" data-toggle="tooltip" title="TO TOP">
-                                                        <span class="glyphicon glyphicon-chevron-up"></span>
-                                                    </a><br><br>
+                        <span class="glyphicon glyphicon-chevron-up"></span>
+                    </a><br><br>
                 </div>
             </div>
             <div class="row socialbox">
@@ -283,6 +333,26 @@
     <script type="text/javascript" src="assets/js/profileMDB/mdb.min.js"></script>
     <!-- Application Scripts -->
     <script type="text/javascript" src="assets/js/profileMDB/team.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize Tooltip
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#home']").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        })
+    </script>
 </body>
 
 </html>
