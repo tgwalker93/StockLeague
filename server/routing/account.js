@@ -25,11 +25,12 @@ router.get('/login', (req, res, next) => {
 
 
   //logout route
-  router.get('/logout', (req, res, next) => {
-    req.session.destroy(err => {
-      res.redirect('/')
-    })
-  })
+  router.get('/logout', function(req, res){
+    req.logout();
+    req.session.destroy();
+    res.redirect('/');
+  });
+ 
 
 
   //register route
@@ -48,7 +49,6 @@ function isLoggedIn(req, res, next) {
       // if user is authenticated in the session, carry on 
       if (req.isAuthenticated())
           return next();
-  
       // if they aren't redirect them to the home page
       res.redirect('/');
   }

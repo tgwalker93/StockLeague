@@ -19,20 +19,33 @@ var router = express.Router();
   });
 
   router.get("/profile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../../public/profile.html"));
+    if(req.isAuthenticated()){
+      //go to dashboard automatically
+      res.sendFile(path.join(__dirname, "../../public/profile.html"));
+    }else{
+      res.sendFile(path.join(__dirname, "../../public/home.html"));
+  }
   });
 
   router.get("/team", function(req, res) {
-    res.sendFile(path.join(__dirname, "../../public/team.html"));
-  });
-
-  router.get("/trade", function(req, res) {
-    res.sendFile(path.join(__dirname, "../../public/trade.html"));
+    if(req.isAuthenticated()){
+      //go to dashboard automatically
+      res.sendFile(path.join(__dirname, "../../public/team.html"));
+  }else{
+    res.sendFile(path.join(__dirname, "../../public/home.html"));
+  }
+   
   });
 
 
   router.get("/stockAnalysis", function(req, res) {
-    res.sendFile(path.join(__dirname, "../../public/stockAnalysis.html"));
+    if(req.isAuthenticated()){
+      //go to dashboard automatically
+      res.sendFile(path.join(__dirname, "../../public/stockAnalysis.html"));
+  }else{
+      res.sendFile(path.join(__dirname, "../../public/home.html"));
+  }
+ 
   });
 
   router.get("/login", function(req, res) {
