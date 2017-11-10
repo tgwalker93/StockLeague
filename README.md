@@ -25,7 +25,7 @@ npm install
 
 
 
-### Running
+### Running Locally
 
 Open terminal at root and type:
 ```
