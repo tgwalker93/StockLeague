@@ -1,3 +1,4 @@
+[![https://github.com/tgwalker93/StockLeague/blob/master/public/assets/img/carousel1.gif](https://github.com/tgwalker93/StockLeague/blob/master/public/assets/img/carousel1.gif)](https://github.com/tgwalker93/StockLeague/blob/master/public/assets/img/carousel1.gif)
 # Stock League
 This project is a stock simulator application that allows users to compete for points in a league. Users choose their team arbitrarily when they register along with 3 stocks. A user can currently only have 3 stocks for their profile. Points are calculated based on day to day change.
 
