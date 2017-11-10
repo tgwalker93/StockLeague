@@ -14,7 +14,7 @@ In order to start this program, you will need the following software downloaded:
 * [Node.js](https://nodejs.org/en/docs/)
 
 
-### Install
+### Installing
 
 In order to install node packages, simply open the terminal at the root and type:
 
