@@ -31,6 +31,10 @@ Open terminal at root and type:
 ```
 node server
 ```
+If your application is listening locally, it will be listening on port 3000. You can then view the application locally in the browser from this URL:
+```
+http://localhost:3000/
+```
 
 
 
