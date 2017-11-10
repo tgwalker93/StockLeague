@@ -44,8 +44,8 @@ node server
 
 ## Authors
 
-Tyler Walker - Back-End Developer/Project Manager - [tgwalker93](https://github.com/tgwalker93)
-Tammy Le - Front-End Developer - [letam245](https://github.com/letam245)
-Prathibha Chunchu - Front-End Developer - [chunchuprati](https://github.com/chunchuprati)
-Christopher Jalallian - QA - [chrisjal](https://github.com/chrisjal)
+* **Tyler Walker** - *Back-End Developer/Project Manager* - [tgwalker93](https://github.com/tgwalker93)
+* **Tammy Le** - *Front-End Developer* - [letam245](https://github.com/letam245)
+* **Prathibha Chunchu** - *Front-End Developer* - [chunchuprati](https://github.com/chunchuprati)
+* **Christopher Jalallian** - *QA* - [chrisjal](https://github.com/chrisjal)
 
