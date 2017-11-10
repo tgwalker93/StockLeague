@@ -1,5 +1,5 @@
 # Stock League
-This project is a stock simulator application that allows users to compete for points in a league. Points are calculated based on day to day change.
+This project is a stock simulator application that allows users to compete for points in a league. Users choose their team arbitrarily when they register along with 3 stocks. A user can currently only have 3 stocks for their profile. Points are calculated based on day to day change.
 
 ## Getting Started
 
@@ -9,10 +9,14 @@ If you want to download this repository and run locally, you will need a MySQL l
 
 ### Prerequisites
 
-Node, MySql
+In order to start this program, you will need the following software downloaded: 
+* [MySql](https://dev.mysql.com/doc/)
+* [Node.js](https://nodejs.org/en/docs/)
 
 
 ### Install
+
+In order to install node packages, simply open the terminal at the root and type:
 
 ```
 npm install
@@ -34,12 +38,12 @@ node server
 
 * [MySql](https://dev.mysql.com/doc/) - Database
 * [Sequelize](http://docs.sequelizejs.com/) - Promise-based ORM for Node.js
-* [Node.js](https://nodejs.org/en/docs/) - Back-end Framework
+* [Node.js](https://nodejs.org/en/docs/) - Back-End Framework
 * [Passport.js](http://www.passportjs.org/docs) - Authentication middleware for Node
 * [Bcrypt](https://www.npmjs.com/package/bcrypt) - Library for hashing passwords
 * [Quandl](https://docs.quandl.com/) - API for stock data
 * [Robinhood](https://github.com/sanko/Robinhood) - API for stock data
-* [Bootstrap](https://getbootstrap.com/docs/3.3/getting-started/) - front-end framework
+* [Bootstrap](https://getbootstrap.com/docs/3.3/getting-started/) - Front-End Framework
 
 
 ## Authors
