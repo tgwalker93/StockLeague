@@ -58,3 +58,8 @@ http://localhost:3000/
 * **Prathibha Chunchu** - *Front-End Developer* - [chunchuprati](https://github.com/chunchuprati)
 * **Christopher Jalallian** - *QA* - [chrisjal](https://github.com/chrisjal)
 
+
+---
+
+
+[![HitCount](http://hits.dwyl.io/tgwalker93/StockLeague.svg)](http://hits.dwyl.io/tgwalker93/StockLeague)
