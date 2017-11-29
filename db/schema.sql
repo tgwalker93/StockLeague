@@ -23,4 +23,6 @@ USE stocks_db;
 
 -- SELECT * FROM burgers
 
+SELECT * FROM stocks
+
 
