@@ -8,7 +8,6 @@ function getUserData() {
             displayUserStocks();
             displayUsername();
             calculateUserPoints();
-
         }
       });
 }
@@ -22,6 +21,8 @@ function displayUserStocks() {
 function displayUsername() {
     $("#username").html(userData.username);
 }
+
+//THIS IS WHERE I MAKE THE CHANGE 
 function calculateUserPoints(){
     // Grab the URL of the website
     var currentURL = window.location.origin;

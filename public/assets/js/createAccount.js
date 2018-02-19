@@ -61,9 +61,10 @@ $(document).ready(function() {
 
 
       function getStock() {
+        
+        console.log("I'm IN HERE")
 
         $.get("/api/new/" + stock.name, function(data) {
-
 
           stock = {
               ticker: data.ticker,

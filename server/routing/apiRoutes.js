@@ -53,7 +53,7 @@ router.get("/api/calculateLeague", function(req, res){
 router.get("/api/getProfilePoints", function(req, res) {
 			var userId = req._passport.session.user;
 			var userObj = req.user[userId-1].dataValues;
-			logic.getUserPoints(userObj, res, userId, false, 1);
+			logic.getUserPoints2(userObj, res, userId, false, 1);
 
 });
 

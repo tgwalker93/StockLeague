@@ -81,16 +81,17 @@ passport.use('local-register', new LocalStrategy({passReqToCallback: true}, regi
 
 
 function updateStocks(saveUser) {
+  var yesterday = logic.getYesterdayDate();
   var currentDate = logic.getCurrentDate();
   db.User.update({
             stock1: saveUser.stock1,
-            stock1Date: currentDate,
+            stock1Date: yesterday,
             stock2: saveUser.stock2,
-            stock2Date: currentDate,
+            stock2Date: yesterday,
             stock3: saveUser.stock3,
-            stock3Date: currentDate,
+            stock3Date: yesterday,
             teamName: saveUser.teamName,
-            profilePoints: 0,
+            // profilePoints: 0,
             lastLogin: currentDate
           }, {
             where: {
