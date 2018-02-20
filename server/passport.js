@@ -91,7 +91,7 @@ function updateStocks(saveUser) {
             stock3: saveUser.stock3,
             stock3Date: yesterday,
             teamName: saveUser.teamName,
-            // profilePoints: 0,
+            profilePoints: 0,
             lastLogin: currentDate
           }, {
             where: {

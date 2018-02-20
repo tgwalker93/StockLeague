@@ -36,12 +36,25 @@ function calculateUserPoints(){
         $("#points").html(data.totalPoints);
     });
 }
+
+function handleCollect() {
+
+    if(!userData.lastUpdate) {
+        userData["newProfilePoints"] = 5;
+        $.post("/api/collectPoints", userData, function (data) {
+            var today = new Date();
+            userData["lastUpdate"] = today.toISOString().split('T')[0];
+        });
+    }
+
+}
+
 getUserData();
 
+$(document).on("click", "#collectBtn", handleCollect);
 
 
-
-
+//BEGIN FUNCTIONS FOR GRAPH DATA
 function csvJSON(csv) {
     var lines = csv.split('\n');
     var result = [];

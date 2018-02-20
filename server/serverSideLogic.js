@@ -8,6 +8,23 @@ var logic = {
     //This is an array of each obj returned for each member of a league in getUserPoints
     leagueArray: [],
 
+    updateProfilePoints: function (userId, userObj) {
+        const currentDate = logic.getCurrentDate();
+        db.User.update({
+                profilePoints: userObj.profilePoints,
+                lastLogin: currentDate
+            }, {
+                    where: {
+                        id: userObj.id
+                    }
+                }).then(function () {
+                    console.log("updateProfilePoints backend in serverSideLogic complete");
+                    console.log(userObj.profilePoints);
+                    return currentDate;
+    });
+
+},
+
     getUserPoints2: function (userObj, res, authUserId, repeat, howManyCalls) {
         var repeatUserObj = userObj;
         var repeatUserObjLength = repeatUserObj.length;
@@ -28,7 +45,7 @@ var logic = {
         var completed_requests = 0;
         for (i = 0; i < stocksArray.length; i++) {
             //CHANGE START DATE FOR TESTING IF IT WORKS WHEN USER REGISTERS OTHERWISE IT WILL JUST SHOW A ZERO  "2017-10-02"
-            var query = "https://www.quandl.com/api/v3/datasets/WIKI/" + stocksArray[i] + ".json?column_index=4&start_date=" + datesArray[i] + "&end_date=" + endDate + "&collapse=daily&transform=rdiff&api_key=mduz3V-oEMMBE_BGStxp"
+            var query = "https://www.quandl.com/api/v3/datasets/WIKI/" + stocksArray[i] + ".json?column_index=4&start_date=" + logic.getYesterdayDate() + "&end_date=" + endDate + "&collapse=daily&transform=rdiff&api_key=mduz3V-oEMMBE_BGStxp"
 
             request(query, function (error, response, body) {
                 // If the request is successful

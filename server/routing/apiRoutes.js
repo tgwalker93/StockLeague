@@ -100,6 +100,17 @@ var Robinhood = require('robinhood')(credentials, function(){
 
 });
 
+
+	//API call to collect profile points for the day
+	router.post("/api/collectPoints", function(req, res) {
+		console.log("i'm on api/collectPoints back-end")
+		console.log(req.body.profilePoints);
+		var userId = req._passport.session.user;
+		var userObj = req.user[userId - 1].dataValues;
+		logic.updateProfilePoints(userId, userObj);
+		res.json(logic.getCurrentDate());
+	});
+
 	//API call to get time series using apla advantage API
 	router.get("/api/new/:name", function(req, res) {
 		var stocksArray = []
