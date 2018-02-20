@@ -68,42 +68,42 @@ var logic = {
                         var currentDate = logic.getCurrentDate();
                         var newUserPoints = userStockPoints.totalPoints + userObj.totalPoints;
                         //update user profile with user points
-                        db.User.update({
-                            profilePoints: userStockPoints.totalPoints,
-                            lastLogin: currentDate
-                        }, {
-                                where: {
-                                    id: userObj.id
-                                }
-                            }).then(function () {
-                                if (userObj.id === authUserId && repeat === true) {
-                                    userStockPoints["isAuthUser"] = true;
-                                }
-                                if (!repeat) {
-                                    res.json(userStockPoints);
-                                    return;
-                                } else if (logic.counter !== repeatUserObjLength) {
-                                    userStockPoints["id"] = userObj.id;
-                                    userStockPoints["username"] = userObj.username;
-                                    userStockPoints["teamName"] = userObj.teamName;
-                                    logic.leagueArray.push(userStockPoints);
-                                    logic.getUserPoints(repeatUserObj, res, authUserId, true, repeatUserObjLength);
-                                    return;
-                                } else if (logic.counter === repeatUserObjLength) {
-                                    userStockPoints["id"] = userObj.id;
-                                    userStockPoints["username"] = userObj.username;
-                                    userStockPoints["teamName"] = userObj.teamName;
-                                    logic.leagueArray.push(userStockPoints);
-                                    if (res.json) {
-                                        res.json(logic.leagueArray);
-                                    }
-                                    return;
-                                } else {
-                                    console.log("Something went wrong. I should NOT be here.");
-                                }
+                        // db.User.update({
+                        //     profilePoints: userStockPoints.totalPoints,
+                        //     lastLogin: currentDate
+                        // }, {
+                        //         where: {
+                        //             id: userObj.id
+                        //         }
+                            // }).then(function () {
+                        if (userObj.id === authUserId && repeat === true) {
+                            userStockPoints["isAuthUser"] = true;
+                        }
+                        if (!repeat) {
+                            res.json(userStockPoints);
+                            return;
+                        } else if (logic.counter !== repeatUserObjLength) {
+                            userStockPoints["id"] = userObj.id;
+                            userStockPoints["username"] = userObj.username;
+                            userStockPoints["teamName"] = userObj.teamName;
+                            logic.leagueArray.push(userStockPoints);
+                            logic.getUserPoints2(repeatUserObj, res, authUserId, true, repeatUserObjLength);
+                            return;
+                        } else if (logic.counter === repeatUserObjLength) {
+                            userStockPoints["id"] = userObj.id;
+                            userStockPoints["username"] = userObj.username;
+                            userStockPoints["teamName"] = userObj.teamName;
+                            logic.leagueArray.push(userStockPoints);
+                            if (res.json) {
+                                res.json(logic.leagueArray);
+                            }
+                            return;
+                        } else {
+                            console.log("Something went wrong. I should NOT be here.");
+                        }
 
 
-                            });
+                            // });
 
 
                     }
