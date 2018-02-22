@@ -114,11 +114,13 @@ var Robinhood = require('robinhood')(credentials, function(){
 					if(resultObj){
 	
 					var lastClosingPrice = resultObj["dataset_data"]["data"][0][1];
+					var dateBeforeLastClosingPrice = resultObj["dataset_data"]["data"][1][0];
 					
 					console.log("SHOULD BE LATEST STOCK PRICE: " + lastClosingPrice);
 					newStock = {
 						ticker: req.params.name,
-						price: lastClosingPrice
+						price: lastClosingPrice,
+						dateBefore: dateBeforeLastClosingPrice
 	
 					}
 					res.json(newStock)

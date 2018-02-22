@@ -1,5 +1,22 @@
 $(document).ready(function() {
 
+
+  //GETTING LAST BUSINESS DAY to user for stock! -----------------
+  function isBusinessDay(date) {
+    var day = date.getDay();
+    if (day == 0 || day == 6) {
+      return false;
+    }
+    return true;
+  }
+
+  var d = new Date();
+  while (!isBusinessDay(d)) {
+    d.setDate(d.getDate() - 1)
+  }
+
+  var lastBusinessDay = d.toISOString().split('T')[0]
+
     //current stock searched
     var stock;
 
@@ -32,18 +49,24 @@ $(document).ready(function() {
       
         if(allStocks[0]!==""&& allStocks[0]){
           $("#stock1").attr("value", allStocks[0].ticker);
+          $("#stock1Date").attr("value", allStocks[0].dateBefore);
         }else{
           $("#stock1").attr("value", "MSFT");
+          $("#stock1Date").attr("value", lastBusinessDay);
         }
         if(allStocks[1]!==""&& allStocks[1]){
           $("#stock2").attr("value", allStocks[1].ticker);
+          $("#stock2Date").attr("value", allStocks[1].dateBefore);
         }else{
           $("#stock2").attr("value", "GOOGL");
+          $("#stock2Date").attr("value", lastBusinessDay);
         }
         if(allStocks[2]!=="" && allStocks[2]){
           $("#stock3").attr("value", allStocks[2].ticker);
+          $("#stock3Date").attr("value", allStocks[2].dateBefore);
         }else{
           $("#stock3").attr("value", "AAPL");
+          $("#stock3Date").attr("value", lastBusinessDay);
         }
         console.log(allStocks);
 
@@ -67,7 +90,8 @@ $(document).ready(function() {
 
           stock = {
               ticker: data.ticker,
-              price: data.price
+              price: data.price,
+              dateBefore: data.dateBefore
           }
             allStocks.push(stock);
             console.log(allStocks);
@@ -106,6 +130,8 @@ $(document).ready(function() {
         $("#stocksView").append(newPostPanel);
         return newPostPanel;
       }
+
+ 
 
 
       function handlePostDelete() {

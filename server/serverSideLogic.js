@@ -27,8 +27,8 @@ var logic = {
             var responses = [];
             var completed_requests = 0;
             for(i=0;i<stocksArray.length; i++){
-				//CHANGE START DATE FOR TESTING IF IT WORKS WHEN USER REGISTERS OTHERWISE IT WILL JUST SHOW A ZERO  "2017-10-02"
-                var query = "https://www.quandl.com/api/v3/datasets/WIKI/" + stocksArray[i]  + ".json?column_index=4&start_date=" + datesArray[i]+ "&end_date=" + endDate + "&collapse=daily&transform=rdiff&api_key=mduz3V-oEMMBE_BGStxp"
+				//CHANGE START DATE FOR TESTING IF IT WORKS WHEN USER REGISTERS OTHERWISE IT WILL JUST SHOW A ZERO  "2017-10-02"  
+                var query = "https://www.quandl.com/api/v3/datasets/WIKI/" + stocksArray[i] + ".json?column_index=4&start_date=" + datesArray[i] + "&end_date=" + endDate + "&collapse=daily&transform=rdiff&api_key=mduz3V-oEMMBE_BGStxp"
                 
                     request(query, function(error, response, body) {
                         // If the request is successful
@@ -39,23 +39,26 @@ var logic = {
                             if(completed_requests === stocksArray.length){
 								console.log("All API calls have been made!");
 								var userStockPercentage = [];
-								var userPoints = [];
+                                var userPoints = [];
+                                var x = 0;
 								for(i=0; i<responses.length; i++){
 									console.log("Start date is " + responses[i].dataset.start_date);
 									console.log("End date is " + responses[i].dataset.end_date);
 									if(responses[i].dataset.data.length>0){
-										var x = responses[i].dataset.data[0][1];
+										 x = responses[i].dataset.data[0][1];
 									}else{
-										var x = 0;
+										 x = 0;
 									}
 									
 									userStockPercentage.push((x).toFixed(4)*100);
 									userPoints.push((x).toFixed(4)*100*100);
 								}
-								var totalPoints = math.sum(userPoints);
-								if(totalPoints<0){
-									totalPoints = 0;
-								}
+                                var totalPoints = math.round(math.sum(userPoints));
+                                
+                                //This is if you want points to not go below zero
+								// if(totalPoints<0){
+								// 	totalPoints = 0;
+								// }
 								var userStockPoints = {
 									stock1PercentChange: userStockPercentage[0]||0,
 									stock1Points: userPoints[0]||0,

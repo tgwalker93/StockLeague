@@ -1,12 +1,35 @@
 [![https://github.com/tgwalker93/StockLeague/blob/master/public/assets/img/carousel1.gif](https://github.com/tgwalker93/StockLeague/blob/master/public/assets/img/carousel1.gif)](https://github.com/tgwalker93/StockLeague/blob/master/public/assets/img/carousel1.gif)
 # Stock League
-This project is a stock simulator application that allows users to compete for points in a league. Users choose their team arbitrarily when they register along with 3 stocks. A user can currently only have 3 stocks for their profile. Points are calculated based on day to day change.
+
+This is a simple stock simulator application where you can compete with friends based on portfolio growth. Currently, all you have to do is choose three stocks and check in everyday to see how your portfolio grows. When you register, you pick three stocks and once you complete registration you won't be able to change unless you register again under a different username. When picking your stock, it will give you the last closing price. Also, if you choose let than 3 stocks, then there will be default stocks for the remaining amount. Once you are registered, your points will begin accumulating immediately, accounting for points for that previous day. If you choose to join a league, other players that are in your league will be able to compare points to compete for the highest growth!
+
+
 
 ## Getting Started
 
-You can refer to the link here to see the application deployed on Heroku: https://stockleague2.herokuapp.com/
+You can refer to the link here to see the application deployed on Heroku: https://stockleague.herokuapp.com/
 
 If you want to download this repository and run locally, you will need a MySQL local database connection, and you can change the config.json file to the correct login. 
+
+## Screenshots
+
+### Register Page
+[![/public/assets/img/Screenshots/Register.PNG](/public/assets/img/Screenshots/Register.PNG)](/public/assets/img//Screenshots/Register.PNG)
+
+
+### Profile Page
+[![/public/assets/img/Screenshots/Profile.PNG](/public/assets/img/Screenshots/Profile.PNG)](/public/assets/img//Screenshots/Profile.PNG)
+
+### Stock Analysis Page
+[![/public/assets/img/Screenshots/Analysis.PNG](/public/assets/img/Screenshots/Analysis.PNG)]
+(/public/assets/img//Screenshots/Analysis.PNG)
+
+### League Page
+[![/public/assets/img/Screenshots/League.PNG](/public/assets/img/Screenshots/League.PNG)]
+(/public/assets/img//Screenshots/League.PNG)
+
+
+
 
 ### Prerequisites
 

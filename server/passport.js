@@ -51,8 +51,11 @@ const register = (req, username, password, done) => {
       username: req.body.username,
       password: req.body.password,
       stock1: req.body.stock1,
+      stock1Date: req.body.stock1Date,
       stock2: req.body.stock2,
+      stock2Date: req.body.stock2Date,
       stock3: req.body.stock3,
+      stock3Date: req.body.stock3Date,
       teamName: req.body.teamName
     }
     if (user) {
@@ -84,11 +87,11 @@ function updateStocks(saveUser) {
   var currentDate = logic.getCurrentDate();
   db.User.update({
             stock1: saveUser.stock1,
-            stock1Date: currentDate,
+            stock1Date: saveUser.stock1Date,
             stock2: saveUser.stock2,
-            stock2Date: currentDate,
+            stock2Date: saveUser.stock2Date,
             stock3: saveUser.stock3,
-            stock3Date: currentDate,
+            stock3Date: saveUser.stock3Date,
             teamName: saveUser.teamName,
             profilePoints: 0,
             lastLogin: currentDate

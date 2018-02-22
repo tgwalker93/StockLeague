@@ -21,7 +21,7 @@
 
 </head>
 
-<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 	<!-- =========================== NAVBAR	=========================== -->
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -40,7 +40,7 @@
 					<li><a href="#about">About</a></li>
 					<li><a href="#play">How</a></li>
 					<li><a href="#resource">Resources</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<!-- <li><a href="#contact">Contact</a></li> -->
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -54,10 +54,9 @@
 	</nav>
 
 
-
 	<!-- =========================== COUSEL	=========================== -->
 
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div id="home" id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
 			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -70,8 +69,11 @@
 			<div class="item active">
 				<img src="assets/img/carousel1.gif" alt="first image" width="1200" height="100">
 				<div class="carousel-caption hidden-xs">
-					<p>Let's make stock fun!!! Compete with others</p>
+
+					<p>Compete with friends for the best portfolio growth</p>
+
 					<h1>WELCOME TO STOCK LEAGUE</h1>
+					
 					<br>
 					<a class="btn btn-primary btn-lg" href="/login">Login</a>
 					<a class="btn btn-primary btn-lg" href="/createAccount">Register</a>
@@ -81,8 +83,10 @@
 			<div class="item">
 				<img src="assets/img/carousel2.gif" alt="second image" width="1200" height="100">
 				<div class="carousel-caption hidden-xs">
-					<p>Let's make stock fun!!! Compete with others</p>
+					<p>Compete with friends for the best portfolio growth</p>
+					
 					<h1>WELCOME TO STOCK LEAGUE</h1>
+
 					<br>
 					<a class="btn btn-primary btn-lg" href="/login">Login</a>
 					<a class="btn btn-primary btn-lg" href="/createAccount">Register</a>
@@ -92,15 +96,17 @@
 			<div class="item">
 				<img src="assets/img/carousel3.gif" alt="third image" width="1200" height="100">
 				<div class="carousel-caption hidden-xs">
-					<p>Let's make stock fun!!! Compete with others</p>
+					<p>Compete with friends for the best portfolio growth</p>
+					
 					<h1>WELCOME TO STOCK LEAGUE</h1>
+
 					<br>
 					<a class="btn btn-primary btn-lg" href="/login">Login</a>
 					<a class="btn btn-primary btn-lg" href="/createAccount">Register</a>
 				</div>
 			</div>
 		</div>
-
+		
 		<!-- Left and right controls -->
 		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -110,18 +116,22 @@
 				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 				  <span class="sr-only">Next</span>
 				</a>
+
+	<div id="about">
+	</div>
+	
 	</div>
 
 	<!-- =========================== ABOUT THE APP	=========================== -->
-	<div class="container" id="about">
+	<!-- <div class="container" id="about"> -->
+	
+		
+		<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<h2>About stock League</h2>
+				<h2>About Stock League</h2>
 				<br>
-				<p>Stock Simulator app that meshes with the fantasy football league concept where users can compete against each other in
-					leagues. Each user chooses their top three stocks regardless of cash amount, and profile points are calculated based
-					on stock growth. At any point, users can choose to trade stocks but can only hold 3 stocks at a time, and their points
-					translate to basis point growth.</p>
+				<p id="aboutParagraph">This is a simple stock simulator application where you can compete with friends based on portfolio growth. Currently, all you have to do is choose three stocks and check in everyday to see how your portfolio grows. When you register, you pick three stocks and once you complete registration you won't be able to change unless you register again under a different username. When picking your stock, it will give you the last closing price. Also, if you choose let than 3 stocks, then there will be default stocks for the remaining amount. Once you are registered, your points will begin accumulating immediately, accounting for points for that previous day. If you choose to join a league, other players that are in your league will be able to compare points to compete for the highest growth!</p>
 			</div>
 		</div>
 	</div>
@@ -254,7 +264,7 @@
 
 	<!-- =========================== contact form =========================== -->
 
-	<div class="container-fluid" id="contact">
+	<!-- <div class="container-fluid" id="contact">
 		<h2 id="contactsection">Contact</h2>
 		<div class="row">
 
@@ -287,7 +297,7 @@
 
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 
 
