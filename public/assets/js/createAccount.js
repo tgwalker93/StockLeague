@@ -11,6 +11,7 @@ $(document).ready(function() {
   }
 
   var d = new Date();
+  d.setDate(d.getDate() - 2)
   while (!isBusinessDay(d)) {
     d.setDate(d.getDate() - 1)
   }
