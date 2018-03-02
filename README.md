@@ -14,17 +14,21 @@ If you want to download this repository and run locally, you will need a MySQL l
 ## Screenshots
 
 ### Register Page
+Here you will register and you can pick three stocks for your portfolio. If you do not pick three stocks, there are three default stocks automatically picked for you. Once you pick your three stocks, you cannot change them. 
 ![/public/assets/img/Screenshots/Register.PNG](/public/assets/img/Screenshots/Register.PNG)
 
 
 ### Profile Page
+This page will display your profile points based on basis point change. When you first register, it will calculate the growth for the previous day. 
 ![/public/assets/img/Screenshots/Profile.PNG](/public/assets/img/Screenshots/Profile.PNG)
 
 ### Stock Analysis Page
+You can search many stocks to see their company bio, some fundamentals, and a graph.
 ![/public/assets/img/Screenshots/Analysis.PNG](/public/assets/img/Screenshots/Analysis.PNG)
 
 
 ### League Page
+If you chose a league that is the same as someone else's, then all the members of the league will show on this page with their profile points. 
 ![/public/assets/img/Screenshots/League.PNG](/public/assets/img/Screenshots/League.PNG)
 
 
