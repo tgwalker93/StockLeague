@@ -14,19 +14,18 @@ If you want to download this repository and run locally, you will need a MySQL l
 ## Screenshots
 
 ### Register Page
-[![/public/assets/img/Screenshots/Register.PNG](/public/assets/img/Screenshots/Register.PNG)](/public/assets/img//Screenshots/Register.PNG)
+![/public/assets/img/Screenshots/Register.PNG](/public/assets/img/Screenshots/Register.PNG)
 
 
 ### Profile Page
-[![/public/assets/img/Screenshots/Profile.PNG](/public/assets/img/Screenshots/Profile.PNG)](/public/assets/img//Screenshots/Profile.PNG)
+![/public/assets/img/Screenshots/Profile.PNG](/public/assets/img/Screenshots/Profile.PNG)
 
 ### Stock Analysis Page
-[![/public/assets/img/Screenshots/Analysis.PNG](/public/assets/img/Screenshots/Analysis.PNG)]
-(/public/assets/img//Screenshots/Analysis.PNG)
+![/public/assets/img/Screenshots/Analysis.PNG](/public/assets/img/Screenshots/Analysis.PNG)
+
 
 ### League Page
-[![/public/assets/img/Screenshots/League.PNG](/public/assets/img/Screenshots/League.PNG)]
-(/public/assets/img//Screenshots/League.PNG)
+![/public/assets/img/Screenshots/League.PNG](/public/assets/img/Screenshots/League.PNG)
 
 
 
